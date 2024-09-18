@@ -5,7 +5,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../utils/constants/enums.dart';
 import '../../../utils/constants/sizes.dart';
 import '../shimmers/shimmer.dart';
 
@@ -19,22 +18,22 @@ class TRoundedImage extends StatelessWidget {
     this.height = 56,
     this.memoryImage,
     this.overlayColor,
-    required this.imageType,
+    this.isNetworkImage = false,
     this.backgroundColor,
-    this.padding = TSizes.sm,
+    this.padding,
     this.margin,
     this.fit = BoxFit.contain,
     this.applyImageRadius = true,
-    this.borderRadius = TSizes.md,
+    this.borderRadius,
   });
 
   final bool applyImageRadius;
   final BoxBorder? border;
-  final double borderRadius;
+  final double? borderRadius;
   final BoxFit? fit;
   final String? image;
   final File? file;
-  final ImageType imageType;
+  final bool isNetworkImage;
   final Color? overlayColor;
   final Color? backgroundColor;
   final Uint8List? memoryImage;
@@ -47,34 +46,17 @@ class TRoundedImage extends StatelessWidget {
       width: width,
       height: height,
       margin: margin != null ? EdgeInsets.all(margin!) : null,
-      padding: EdgeInsets.all(padding!),
-      decoration: BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius)),
-      child: _buildImageWidget(),
+      padding: EdgeInsets.all(padding ?? TSizes.sm),
+      decoration: BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius ?? TSizes.md)),
+      child: _buildImageWidget(isNetworkImage),
     );
   }
 
-  Widget _buildImageWidget() {
-    Widget imageWidget;
-
-    switch (imageType) {
-      case ImageType.network:
-        imageWidget = _buildNetworkImage();
-        break;
-      case ImageType.memory:
-        imageWidget = _buildMemoryImage();
-        break;
-      case ImageType.file:
-        imageWidget = _buildFileImage();
-        break;
-      case ImageType.asset:
-        imageWidget = _buildAssetImage();
-        break;
-    }
-
+  Widget _buildImageWidget(bool isNetworkImage) {
     // Apply ClipRRect directly to the image widget
     return ClipRRect(
-      borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,
-      child: imageWidget,
+      borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius ?? TSizes.md) : BorderRadius.zero,
+      child: isNetworkImage ? _buildNetworkImage() : _buildAssetImage(),
     );
   }
 
@@ -86,32 +68,9 @@ class TRoundedImage extends StatelessWidget {
         fit: fit,
         imageUrl: image!,
         color: overlayColor,
-        progressIndicatorBuilder: (context, url, downloadProgress) =>
-            TShimmerEffect(width: width ?? 50, height: height ?? 50),
+        progressIndicatorBuilder: (context, url, downloadProgress) => TShimmerEffect(width: width ?? 50, height: height ?? 50),
         errorWidget: (context, url, error) => const Icon(Iconsax.image),
       );
-    } else {
-      // Return an empty container if no image is provided
-      return Container();
-    }
-  }
-
-  // Function to build the memory image widget
-  Widget _buildMemoryImage() {
-    if (memoryImage != null) {
-      // Display image from memory using Image widget
-      return Image(fit: fit, image: MemoryImage(memoryImage!), color: overlayColor);
-    } else {
-      // Return an empty container if no image is provided
-      return Container();
-    }
-  }
-
-  // Function to build the asset image widget
-  Widget _buildFileImage() {
-    if (file != null) {
-      // Display image from assets using Image widget
-      return Image(fit: fit, image: FileImage(file!), color: overlayColor);
     } else {
       // Return an empty container if no image is provided
       return Container();

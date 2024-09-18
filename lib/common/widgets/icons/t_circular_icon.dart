@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/constants/colors.dart';
 import '../../../utils/exports.dart';
 
 class TCircularIcon extends StatelessWidget {
@@ -13,12 +14,12 @@ class TCircularIcon extends StatelessWidget {
     super.key,
     required this.icon,
     this.onPressed,
-    this.iconColor = TColors.white,
-    this.backgroundColor = TColors.secondary,
+    this.iconColor = Colors.white,
+    this.backgroundColor,
   });
 
   final IconData icon;
-  final Color iconColor, backgroundColor;
+  final Color? iconColor, backgroundColor;
   final VoidCallback? onPressed;
 
   @override
@@ -26,7 +27,7 @@ class TCircularIcon extends StatelessWidget {
     return Card(
       elevation: 6,
       shape: const CircleBorder(),
-      color: backgroundColor,
+      color: backgroundColor ?? TColors.secondary,
       child: IconButton(onPressed: onPressed, icon: Icon(icon, color: iconColor)),
     );
   }

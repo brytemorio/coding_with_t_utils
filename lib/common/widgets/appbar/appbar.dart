@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../utils/constants/exports.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/sizes.dart';
 import '../../../utils/device/device_utility.dart';
 import '../../../utils/helpers/exports.dart';
 
@@ -34,7 +35,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
+      padding: EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow

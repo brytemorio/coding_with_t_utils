@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/constants/sizes.dart';
 import '../../../utils/exports.dart';
 import 'country_code_picker.dart';
 
@@ -15,12 +16,12 @@ class TPhoneWithCountryCodePicker extends StatelessWidget {
     return Row(
       children: [
         TCountryCodePicker(onChanged: countryCodeOnChanged),
-        const SizedBox(width: TSizes.spaceBtwItems / 2),
+        SizedBox(width: TSizes.spaceBtwItems / 2),
         Expanded(
           child: TextFormField(
             controller: phoneController,
             validator: (value) => TValidator.validatePhoneNumber(value),
-            decoration: const InputDecoration(labelText: TTexts.phoneNo),
+            decoration: const InputDecoration(labelText: 'Phone Number'),
           ),
         ),
       ],
