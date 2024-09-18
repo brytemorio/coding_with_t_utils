@@ -5,7 +5,14 @@ version: 0.0.4
 # git tag v0.0.3
 # git push origin v0.0.3
 
-homepage:
+  # Use in your project as defined below
+  # T Packages
+  # t_utils:
+  #  git:
+  #    url: https://github.com/CodingwithTea/t_utils.git
+  #    ref: v0.0.4
+
+homepage: ''
 
 environment:
   sdk: ^3.5.1
@@ -35,3 +42,4 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  uses-material-design: true
