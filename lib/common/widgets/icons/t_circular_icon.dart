@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// A custom circular icon widget with a configurable background color.
-///
-/// - [icon] is the required icon to display.
-/// - [width] and [height] define the size of the container.
-/// - [size] specifies the size of the icon inside the container (default: TSizes.lg).
-/// - [color] sets the color of the icon.
-/// - [backgroundColor] sets the background color of the circular container.
-/// - [onPressed] defines the callback when the icon is pressed.
 class TCircularIcon extends StatelessWidget {
+  /// A custom circular icon widget with a configurable background color.
+  ///
+  /// - [icon] is the required icon to display.
+  /// - [width] and [height] define the size of the container.
+  /// - [size] specifies the size of the icon inside the container (default: TSizes.lg).
+  /// - [color] sets the color of the icon.
+  /// - [backgroundColor] sets the background color of the circular container.
+  /// - [onPressed] defines the callback when the icon is pressed.
   const TCircularIcon({
     super.key,
     required this.icon,
@@ -49,7 +49,9 @@ class TCircularIcon extends StatelessWidget {
       width: width ?? 48.0, // Default container width
       height: height ?? 48.0, // Default container height
       decoration: BoxDecoration(
-        color: backgroundColor ?? (isDarkMode ? Colors.black.withValues(alpha: 0.9) : Colors.white.withValues(alpha: 0.9)),
+        color: backgroundColor ??
+            color?.withValues(alpha: 0.1) ??
+            (isDarkMode ? Colors.black.withValues(alpha: 0.9) : Colors.white.withValues(alpha: 0.9)),
         borderRadius: BorderRadius.circular(100), // Ensures circular shape
       ),
       child: IconButton(

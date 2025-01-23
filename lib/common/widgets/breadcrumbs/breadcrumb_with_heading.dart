@@ -114,11 +114,7 @@ class TBreadcrumbsWithHeading extends StatelessWidget {
               ),
             if (returnToPreviousScreen) const SizedBox(width: 8.0),
             Expanded(
-              child: TPageHeading(
-                heading: heading,
-                iconData: iconData,
-                subHeading: subHeading,
-              ),
+              child: TPageHeading(heading: heading, iconData: iconData, subHeading: subHeading),
             ),
           ],
         ),
@@ -129,6 +125,9 @@ class TBreadcrumbsWithHeading extends StatelessWidget {
   /// Capitalizes the first letter of the given string.
   String capitalize(String text) {
     if (text.isEmpty) return '';
+    if (text[0] == '/') {
+      text = text.substring(1);
+    }
     return text[0].toUpperCase() + text.substring(1);
   }
 }
