@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+
+import '../../../utils/exports.dart';
+import '../icons/t_circular_icon.dart';
+
+class TTextWithIcon extends StatelessWidget {
+  const TTextWithIcon({
+    super.key,
+    this.icon = Iconsax.add,
+    required this.text,
+    this.color,
+    this.backgroundColor,
+    this.textStyle,
+  });
+
+  final IconData icon;
+  final String text;
+  final Color? color;
+  final Color? backgroundColor;
+  final TextStyle? textStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        TCircularIcon(
+          icon: icon,
+          color: color,
+          backgroundColor: backgroundColor ?? (color != null ? color!.withValues(alpha: 0.1) : TColors.primary),
+        ),
+        SizedBox(width: TSizes.spaceBtwItems),
+        DefaultTextStyle(
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: textStyle ?? (Theme.of(context).textTheme.headlineMedium!),
+          child: Text(text),
+        ),
+      ],
+    );
+  }
+}

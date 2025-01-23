@@ -1,39 +1,231 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## TOverlayNotification
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A reusable Flutter notification overlay widget for displaying success, error, warning, and info messages. This package allows you to show customizable notifications that automatically dismiss after a specified duration and can stack multiple notifications.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Styled notifications for different types: Success, Error, Warning, and Info.
+- Automatically dismisses after a configurable duration.
+- Supports stacking multiple notifications.
+- Highly customizable UI and message content.
+- Easy to integrate into any Flutter project.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Step 1: Add Dependency
 
-```dart
-const like = 'sample';
+Add this to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  t_utils: ^2.0.0
 ```
 
-## Additional information
+### Step 2: Import the Package
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+In your Dart file, import the package:
+
+```dart
+import 'package:t_overlay_notification/t_overlay_notification.dart';
+```
+
+### Step 3: Show a Notification
+Use the TNotificationOverlay.show() method to show a notification:
+
+```dart
+TNotificationOverlay.show(
+  context: context,  // The BuildContext to insert the overlay.
+  title: 'Success',  // Title of the notification.
+  message: 'This is a success notification.',  // Message content.
+  type: NotificationType.success,  // The type of the notification (success, error, warning, info).
+);
+
+```
+
+### Function Types
+- **TNotificationOverlay.success**: Green color notification for success messages.
+- **TNotificationOverlay.error**: Red color notification for error messages.
+- **TNotificationOverlay.warning**: Yellow color notification for warning messages.
+- **TNotificationOverlay.info**: Blue color notification for informational messages.
+
+### Notification Types
+- NotificationType.success: Green color notification for success messages.
+- NotificationType.error: Red color notification for error messages.
+- NotificationType.warning: Yellow color notification for warning messages.
+- NotificationType.info: Blue color notification for informational messages.
+
+Customization
+
+You can customize the duration of the notification, its positioning, and other UI aspects like color, padding, and margin.
+```dart
+TNotificationOverlay.show(
+  context: context,
+  title: 'Info',
+  message: 'This is an info notification.',
+  type: NotificationType.info,
+  duration: Duration(seconds: 5),  // Custom duration
+);
+
+```
+
+
+## Example Usage
+
+### Basic Notification
+
+To show a simple notification with a title, subtitle, and custom type, use the `TNotificationOverlay.show()` method:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:t_notification_widget/t_notification_widget.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Notification Overlay Example')),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              TNotificationOverlay.show(
+                context: context,
+                title: 'Success Notification',
+                subTitle: 'This is a success notification.',
+                type: NotificationType.success,
+                duration: Duration(seconds: 3),
+                height: 80, // Adjust the height of the notification
+                width: 350, // Adjust the width of the notification
+                spacing: 8, // Space between stacked notifications
+                position: NotificationPosition.topRight,
+              );
+            },
+            child: Text('Show Notification'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### Notification with Slide and Fade Animations
+
+You can customize the slide-in and fade-out animations for your notifications:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:t_notification_widget/t_notification_widget.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Animated Notification Example')),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              TNotificationOverlay.show(
+                context: context,
+                title: 'Warning Notification',
+                subTitle: 'This is a warning notification.',
+                type: NotificationType.warning,
+                duration: Duration(seconds: 3),
+                slideInDirection: SlideDirection.left, // Slide from left
+                slideOutDirection: SlideDirection.left, // Slide out to left
+                height: 80,
+                width: 350,
+                spacing: 10,
+                position: NotificationPosition.bottomLeft,
+              );
+            },
+            child: Text('Show Animated Notification'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+### Custom Notification Design
+
+Customize the appearance of the notification with various color options:
+
+```dart
+TNotificationOverlay.show(
+  context: context,
+  title: 'Custom Notification', // Required title
+  subTitle: 'This is a custom-styled notification.', // Optional subtitle
+  action: TextButton( // Example action widget
+    onPressed: () {
+      print('Action clicked');
+    },
+    child: Text('UNDO', style: TextStyle(color: Colors.white)),
+  ),
+  type: NotificationType.info, // Notification type
+  backgroundColor: Colors.blueAccent, // Background color
+  borderColor: Colors.blue, // Border color
+  titleColor: Colors.white, // Title text color
+  messageColor: Colors.white70, // Subtitle text color
+  iconColor: Colors.white, // Icon color
+  borderRadius: 10.0, // Rounded corners
+  paddingVertical: 16.0, // Vertical padding
+  paddingHorizontal: 20.0, // Horizontal padding
+  duration: Duration(seconds: 5), // Notification duration
+  sticky: false, // Set to true for sticky notifications
+  height: 100, // Notification height
+  width: 300, // Notification width
+  spacing: 12, // Spacing between notifications
+  position: NotificationPosition.topLeft, // Position on the screen
+  slideInDirection: SlideDirection.leftToRight, // Slide-in animation direction
+  slideOutDirection: SlideDirection.rightToLeft, // Slide-out animation direction
+);
+
+```
+
+### API Reference
+
+- show(): Displays the notification with the provided parameters.
+- context: The BuildContext of the widget.
+- title: The title of the notification (required).
+- subTitle: The subtitle of the notification (optional).
+- type: The type of notification (success, error, warning, info) [default: NotificationType.info].
+- duration: Duration for the notification to appear [default: Duration(seconds: 3)].
+- spacing: Space between stacked notifications [default: 10.0].
+- position: Position of the notification on the screen (topLeft, topRight, bottomLeft, bottomRight).
+- slideInDirection: The direction from which the notification slides in (optional).
+- slideOutDirection: The direction from which the notification slides out (optional).
+- height, width: Dimensions of the notification box (optional).
+- backgroundColor, borderColor, titleColor, messageColor, iconColor: Customize colors of the notification.
+- paddingVertical, paddingHorizontal: Customize padding for the notification.
+- borderRadius: Customize the border radius of the notification.
+- onClose: Callback for handling notification close action.
+
+### Notes
+
+- You can customize the animation duration and slide direction according to your needs.
+- The slideInDirection and slideOutDirection can be set to any of the following:
+  - SlideDirection.left
+  - SlideDirection.right
+  - SlideDirection.top
+  - SlideDirection.bottom
+- The notification automatically dismisses after the specified duration unless manually closed with the onClose callback.
+
+
+
+### Additional Information
+
+- Contributions: If you'd like to contribute to this project, please open a pull request or submit an issue. Contributions are welcome to improve the UI or add new features.
+- Issues: If you encounter any bugs or have suggestions for improvements, please file an issue in the repository.
+- Support: The package is actively maintained, and issues are typically addressed within 1–2 business days.

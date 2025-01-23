@@ -2,32 +2,52 @@ import 'package:flutter/material.dart';
 
 class TColors {
   // App theme colors
-  static Color primary = const Color(0xFF33ba78);
-  static Color secondary = const Color(0xFF5b68f6);
+  static Color primary = const Color(0xFF4b68ff);
+  static Color secondary = const Color(0xFFFFE24B);
+  static Color primaryBackground = const Color(0xFFBCDBF8);
+  static Color secondaryBackground = const Color(0xFDFFF6D7);
   static Color accent = const Color(0xFFebedef);
 
+  // Icon colors
+  static Color iconPrimary = const Color(0xFF8D8D8D);
+
   // Text colors
-  static Color textPrimary = const Color(0xFF333333);
-  static Color textSecondary = const Color(0xFF6C757D);
+  static Color textPrimary = const Color(0xFF222A3D);
+  static Color textSecondary = const Color(0xFF4B5363);
+  static Color textDarkPrimary = const Color(0xFFFFFFFF);
+  static Color textDarkSecondary = const Color(0xFFD1D5DB);
   static Color textWhite = Colors.white;
 
+  static Color disabledTextLight = const Color(0xFFD1D5DB);
+  static Color disabledBackgroundLight = const Color(0xFFF3F4F6);
+
+  static Color disabledTextDark = textSecondary;
+  static Color disabledBackgroundDark = const Color(0xFF222A3D);
+
   // Background colors
-  static Color light = const Color(0xFFF6F6F6);
-  static Color dark = const Color(0xFF272727);
-  static Color primaryBackground = const Color(0xFFF3F5FF);
+  static Color lightBackground = const Color(0xFFEBEFF3);
+  static Color darkBackground = const Color(0xFF02040A);
 
   // Background Container colors
-  static Color lightContainer = const Color(0xFFF6F6F6);
-  static Color darkContainer = const Color(0xFFFFFFFF).withOpacity(0.1);
+  static Color lightContainer = const Color(0xFFF3F4F6);
+  static Color darkContainer = const Color(0xFF13192B);
 
   // Button colors
-  static Color buttonPrimary = const Color(0xFF4b68ff);
-  static Color buttonSecondary = const Color(0xFF6C757D);
-  static Color buttonDisabled = const Color(0xFFC4C4C4);
+  static Color buttonPrimary = primary;
+  static Color buttonSecondary = secondary;
+  static Color buttonDisabled = disabledBackgroundLight;
+
+  // Icon colors
+  static Color iconPrimaryLight = const Color(0xFF222A3D);
+  static Color iconSecondaryLight = const Color(0xFF9CA3AF);
+  static Color iconPrimaryDark = const Color(0xFFFFFFFF);
+  static Color iconSecondaryDark = const Color(0xFF9CA3AF);
 
   // Border colors
-  static Color borderPrimary = const Color(0xFFD9D9D9);
-  static Color borderSecondary = const Color(0xFFE6E6E6);
+  static Color borderPrimary = primary;
+  static Color borderSecondary = secondary;
+  static Color borderLight = const Color(0xFFD1D5DB);
+  static Color borderDark = const Color(0xFF9CA3AF);
 
   // Error and validation colors
   static Color error = const Color(0xFFD32F2F);
@@ -52,16 +72,24 @@ class TColors {
     Color? textPrimaryColor,
     Color? textSecondaryColor,
     Color? textWhiteColor,
-    Color? lightColor,
-    Color? darkColor,
     Color? primaryBackgroundColor,
+    Color? secondaryBackgroundColor,
+    Color? lightBackgroundColor,
+    Color? darkBackgroundColor,
     Color? lightContainerColor,
     Color? darkContainerColor,
     Color? buttonPrimaryColor,
     Color? buttonSecondaryColor,
     Color? buttonDisabledColor,
+    Color? iconPrimaryColor,
+    Color? iconPrimaryLightColor,
+    Color? iconSecondaryLightColor,
+    Color? iconPrimaryDarkColor,
+    Color? iconSecondaryDarkColor,
     Color? borderPrimaryColor,
     Color? borderSecondaryColor,
+    Color? borderLightColor,
+    Color? borderDarkColor,
     Color? errorColor,
     Color? successColor,
     Color? warningColor,
@@ -81,16 +109,24 @@ class TColors {
     textPrimary = textPrimaryColor ?? textPrimary;
     textSecondary = textSecondaryColor ?? textSecondary;
     textWhite = textWhiteColor ?? textWhite;
-    light = lightColor ?? light;
-    dark = darkColor ?? dark;
     primaryBackground = primaryBackgroundColor ?? primaryBackground;
+    secondaryBackground = secondaryBackgroundColor ?? secondaryBackground;
+    lightBackground = lightBackgroundColor ?? lightBackground;
+    darkBackground = darkBackgroundColor ?? darkBackground;
     lightContainer = lightContainerColor ?? lightContainer;
     darkContainer = darkContainerColor ?? darkContainer;
     buttonPrimary = buttonPrimaryColor ?? buttonPrimary;
     buttonSecondary = buttonSecondaryColor ?? buttonSecondary;
     buttonDisabled = buttonDisabledColor ?? buttonDisabled;
+    iconPrimary = iconPrimaryColor ?? iconPrimary;
+    iconPrimaryLight = iconPrimaryLightColor ?? iconPrimaryLight;
+    iconSecondaryLight = iconSecondaryLightColor ?? iconSecondaryLight;
+    iconPrimaryDark = iconPrimaryDarkColor ?? iconPrimaryDark;
+    iconSecondaryDark = iconSecondaryDarkColor ?? iconSecondaryDark;
     borderPrimary = borderPrimaryColor ?? borderPrimary;
     borderSecondary = borderSecondaryColor ?? borderSecondary;
+    borderLight = borderLightColor ?? borderLight;
+    borderDark = borderDarkColor ?? borderDark;
     error = errorColor ?? error;
     success = successColor ?? success;
     warning = warningColor ?? warning;

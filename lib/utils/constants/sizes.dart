@@ -30,8 +30,8 @@ class TSizes {
   static double imageThumbSize = 80.0;
 
   // Default spacing between sections
-  static double defaultSpace = 18.0;
-  static double spaceBtwItems = 16.0;
+  static double defaultSpace = 16.0;
+  static double spaceBtwItems = 12.0;
   static double spaceBtwSections = 32.0;
 
   // Border radius
@@ -48,7 +48,7 @@ class TSizes {
   static double productItemHeight = 160.0;
 
   // Input field
-  static double inputFieldRadius = 10.0;
+  static double inputFieldRadius = 16.0;
   static double spaceBtwInputFields = 16.0;
 
   // Card sizes

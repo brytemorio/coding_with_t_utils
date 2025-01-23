@@ -18,7 +18,7 @@ class TFullScreenLoader {
       builder: (_) => PopScope(
         canPop: false, // Disable popping with the back button
         child: Container(
-          color: THelperFunctions.isDarkMode(Get.context!) ? TColors.dark : TColors.white,
+          color: THelperFunctions.isDarkMode(Get.context!) ? TColors.darkBackground : TColors.white,
           width: double.infinity,
           height: double.infinity,
           child: const Column(

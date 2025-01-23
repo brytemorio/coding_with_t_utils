@@ -23,7 +23,7 @@ class TCountryCodePicker extends StatelessWidget {
         onChanged: onChanged,
         // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
         initialSelection: 'ZA',
-        dialogBackgroundColor: dark ? TColors.dark : TColors.white,
+        dialogBackgroundColor: dark ? TColors.darkBackground : TColors.white,
         searchDecoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Search country'),
 
         favorite: const ['+27', 'ZA'],

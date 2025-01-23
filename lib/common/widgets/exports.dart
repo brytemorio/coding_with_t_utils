@@ -1,5 +1,11 @@
+// Appbar
 export 'appbar/appbar.dart';
+export 'appbar/sliver_appbar.dart';
 export 'appbar/tabbar.dart';
+
+// Breadcrumbs
+export 'breadcrumbs/breadcrumb.dart';
+export 'breadcrumbs/breadcrumb_with_heading.dart';
 
 export 'chips/rounded_choice_chips.dart';
 
@@ -27,4 +33,6 @@ export 'shimmers/boxes_shimmer.dart';
 export 'shimmers/shimmer.dart';
 export 'shimmers/list_tile_shimmer.dart';
 
-export 'texts/section_heading.dart';
+// Texts
+export 'texts/page_heading.dart';
+export 'texts/text_with_icon.dart';
