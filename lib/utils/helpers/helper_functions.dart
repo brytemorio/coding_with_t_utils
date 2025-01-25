@@ -39,6 +39,30 @@ class THelperFunctions {
     }
   }
 
+  /// Convert a list of Colors to their string representations
+  static int computeColorValue(Color color) {
+    final a = (color.a * 255).round(); // Convert alpha to 0-255
+    final r = (color.r * 255).round(); // Convert red to 0-255
+    final g = (color.g * 255).round(); // Convert green to 0-255
+    final b = (color.b * 255).round(); // Convert blue to 0-255
+
+    // Combine ARGB into a single 32-bit integer
+    final intValue = (a << 24) | (r << 16) | (g << 8) | b;
+    return intValue;
+  }
+
+  /// Restore a `Color` from a 32-bit ARGB integer value.
+  static Color restoreColorFromValue(String value) {
+    final intValue = int.tryParse(value) ?? 0;
+    final a = (intValue >> 24) & 0xFF; // Extract alpha
+    final r = (intValue >> 16) & 0xFF; // Extract red
+    final g = (intValue >> 8) & 0xFF; // Extract green
+    final b = intValue & 0xFF; // Extract blue
+
+    // Create the color with values in the 0-255 range and alpha in 0-255.
+    return Color.fromARGB(a, r, g, b);
+  }
+
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(content: Text(message)),

@@ -7,6 +7,8 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../constants/sizes.dart';
+
 class TDeviceUtils {
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
@@ -47,20 +49,20 @@ class TDeviceUtils {
     SystemChrome.setEnabledSystemUIMode(enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
   }
 
-  static double getScreenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+  static double getScreenHeight(BuildContext? context) {
+    return MediaQuery.of(context ?? Get.context!).size.height;
   }
 
   static double getScreenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
-  static double getPixelRatio() {
-    return MediaQuery.of(Get.context!).devicePixelRatio;
+  static double getPixelRatio(BuildContext? context) {
+    return MediaQuery.of(context ?? Get.context!).devicePixelRatio;
   }
 
-  static double getStatusBarHeight() {
-    return MediaQuery.of(Get.context!).padding.top;
+  static double getStatusBarHeight(BuildContext? context) {
+    return MediaQuery.of(context ?? Get.context!).padding.top;
   }
 
   static double getBottomNavigationBarHeight() {
@@ -124,6 +126,20 @@ class TDeviceUtils {
     if (!await launchUrl(url)) {
       if (kDebugMode) print('Could not launch $url');
     }
+  }
+
+
+
+  static bool isDesktopScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width >= TSizes.desktopScreenSize;
+  }
+
+  static bool isTabletScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width >= TSizes.tabletScreenSize && MediaQuery.of(context).size.width < TSizes.desktopScreenSize;
+  }
+
+  static bool isMobileScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width < TSizes.tabletScreenSize;
   }
 
 // Add more device utility methods as per your specific requirements.

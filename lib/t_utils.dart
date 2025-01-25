@@ -1,5 +1,3 @@
-library t_utils;
-
 export 'common/widgets/exports.dart';
 export 'utils/exports.dart';
 export 'common/styles/shadows.dart';

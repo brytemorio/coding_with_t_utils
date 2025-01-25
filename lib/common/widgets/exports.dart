@@ -7,11 +7,9 @@ export 'appbar/tabbar.dart';
 export 'breadcrumbs/breadcrumb.dart';
 export 'breadcrumbs/breadcrumb_with_heading.dart';
 
-export 'chips/rounded_choice_chips.dart';
+export 'chips/choice_chip.dart';
 
-export 'custom_shapes/containers/circular_container.dart';
-export 'custom_shapes/containers/primary_header_container.dart';
-export 'custom_shapes/containers/rounded_container.dart';
+export 'custom_shapes/containers/custom_container.dart';
 
 export 'custom_shapes/curved_edges/curved_edges.dart';
 export 'custom_shapes/curved_edges/curved_edges_widget.dart';

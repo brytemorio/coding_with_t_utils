@@ -26,15 +26,17 @@ class TTextWithIcon extends StatelessWidget {
       children: [
         TCircularIcon(
           icon: icon,
-          color: color,
-          backgroundColor: backgroundColor ?? (color != null ? color!.withValues(alpha: 0.1) : TColors.primary),
+          color: color ?? TColors.primary,
+          backgroundColor: backgroundColor ?? TColors.primaryBackground,
         ),
         SizedBox(width: TSizes.spaceBtwItems),
-        DefaultTextStyle(
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: textStyle ?? (Theme.of(context).textTheme.headlineMedium!),
-          child: Text(text),
+        Expanded(
+          child: DefaultTextStyle(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: textStyle ?? (Theme.of(context).textTheme.headlineMedium!),
+            child: Text(text),
+          ),
         ),
       ],
     );

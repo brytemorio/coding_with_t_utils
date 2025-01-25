@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:t_utils/t_utils.dart';
+import 'package:t_utils/utils/constants/colors.dart';
 
 class TCircularIcon extends StatelessWidget {
   /// A custom circular icon widget with a configurable background color.
@@ -14,7 +16,7 @@ class TCircularIcon extends StatelessWidget {
     required this.icon,
     this.width,
     this.height,
-    this.size = 24.0, // Default icon size
+    this.size = 18.0,
     this.onPressed,
     this.color,
     this.backgroundColor,
@@ -46,8 +48,8 @@ class TCircularIcon extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      width: width ?? 48.0, // Default container width
-      height: height ?? 48.0, // Default container height
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: backgroundColor ??
             color?.withValues(alpha: 0.1) ??
@@ -55,8 +57,9 @@ class TCircularIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(100), // Ensures circular shape
       ),
       child: IconButton(
+        padding: EdgeInsets.all(TSizes.sm),
         onPressed: onPressed,
-        icon: Icon(icon, color: color ?? Theme.of(context).iconTheme.color, size: size),
+        icon: Icon(icon, color: color ?? TColors.primary, size: size),
       ),
     );
   }
