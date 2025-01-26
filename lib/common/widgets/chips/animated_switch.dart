@@ -49,7 +49,13 @@ class TAnimatedToggleSwitch extends StatelessWidget {
     this.backgroundColor = Colors.white,
     this.borderColor = Colors.transparent,
     this.indicatorSize = const Size.fromWidth(25),
-    this.boxShadow = const [BoxShadow(color: Colors.black26, spreadRadius: 1, blurRadius: 2, offset: Offset(0, 1.5))],
+    this.boxShadow = const [
+      BoxShadow(
+          color: Colors.black26,
+          spreadRadius: 1,
+          blurRadius: 2,
+          offset: Offset(0, 1.5))
+    ],
   });
 
   /// The current state of the toggle switch (true/false).
@@ -111,7 +117,10 @@ class TAnimatedToggleSwitch extends StatelessWidget {
       indicatorSize: indicatorSize,
 
       // Default toggle switch style
-      style: ToggleStyle(backgroundColor: backgroundColor, borderColor: borderColor, boxShadow: boxShadow),
+      style: ToggleStyle(
+          backgroundColor: backgroundColor,
+          borderColor: borderColor,
+          boxShadow: boxShadow),
 
       // Dynamic text builder
       textBuilder: textBuilder ??
@@ -123,11 +132,17 @@ class TAnimatedToggleSwitch extends StatelessWidget {
               ),
 
       // Dynamic icon builder
-      iconBuilder: iconBuilder ?? (value) => value ? Icon(Icons.check_circle, color: TColors.primary) : Icon(Icons.circle_outlined),
+      iconBuilder: iconBuilder ??
+          (value) => value
+              ? Icon(Icons.check_circle, color: TColors.primary)
+              : Icon(Icons.circle_outlined),
 
       // Dynamic style builder for indicator color
       styleBuilder: styleBuilder ??
-          (value) => ToggleStyle(indicatorColor: value ? activeColor ?? TColors.primaryBackground : inactiveColor ?? TColors.grey),
+          (value) => ToggleStyle(
+              indicatorColor: value
+                  ? activeColor ?? TColors.primaryBackground
+                  : inactiveColor ?? TColors.grey),
     );
   }
 }

@@ -11,7 +11,8 @@ class TTogglesExample extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 8),
-        Text('Toggle Switch with Text', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        Text('Toggle Switch with Text',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
         Row(
           children: [
             // Circular icon with default values
@@ -44,14 +45,15 @@ class TTogglesExample extends StatelessWidget {
                 value ? 'On' : 'Off',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              iconBuilder: (value) =>
-                  value ? Icon(Icons.lightbulb, color: Colors.yellow) : Icon(Icons.lightbulb_outline, color: Colors.grey),
+              iconBuilder: (value) => value
+                  ? Icon(Icons.lightbulb, color: Colors.yellow)
+                  : Icon(Icons.lightbulb_outline, color: Colors.grey),
             ),
           ],
         ),
         SizedBox(height: 8),
-
-        Text('Toggle Switch with Icon', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+        Text('Toggle Switch with Icon',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
         SizedBox(height: 8),
         TIconToggleSwitch<int>(
           current: 1,

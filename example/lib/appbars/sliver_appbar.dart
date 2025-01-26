@@ -22,9 +22,13 @@ class TSliverAppBarExample extends StatelessWidget {
             // App bar will not stay pinned when scrolled
             snap: true,
             // App bar will snap into position when scrolling up
-            background: Image.asset('assets/food-app-ui.png', fit: BoxFit.cover),
+            background:
+                Image.asset('assets/food-app-ui.png', fit: BoxFit.cover),
             // Custom background image
-            actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search), tooltip: 'Search')],
+            actions: [
+              IconButton(
+                  onPressed: () {}, icon: Icon(Icons.search), tooltip: 'Search')
+            ],
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(

@@ -24,7 +24,7 @@ class TTextWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        TCircularIcon(
+        TIcon(
           icon: icon,
           color: color ?? TColors.primary,
           backgroundColor: backgroundColor ?? TColors.primaryBackground,

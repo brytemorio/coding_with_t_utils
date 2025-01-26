@@ -9,6 +9,8 @@ class TFirebaseException implements Exception {
   /// Get the corresponding error message based on the error code.
   String get message {
     switch (code) {
+      case 'unauthorized':
+        return 'You are using a test account; modifications are not allowed.';
       case 'unknown':
         return 'An unknown Firebase error occurred. Please try again.';
       case 'invalid-custom-token':

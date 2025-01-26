@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:t_utils/common/widgets/custom_shapes/containers/custom_container.dart';
 import 'package:t_utils/t_utils.dart';
 
 class TRoundedContainerExample extends StatelessWidget {

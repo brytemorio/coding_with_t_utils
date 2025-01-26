@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 /// Custom clipper for creating a path with curved edges.
 class TCustomCurvedEdges extends CustomClipper<Path> {
   @override
@@ -13,7 +12,8 @@ class TCustomCurvedEdges extends CustomClipper<Path> {
     // Top-left corner curve
     const topLeftControlPoint = Offset(0, 0);
     const topLeftEndPoint = Offset(20, 0);
-    path.quadraticBezierTo(topLeftControlPoint.dx, topLeftControlPoint.dy, topLeftEndPoint.dx, topLeftEndPoint.dy);
+    path.quadraticBezierTo(topLeftControlPoint.dx, topLeftControlPoint.dy,
+        topLeftEndPoint.dx, topLeftEndPoint.dy);
 
     // Draw the top edge straight line after the left curve
     path.lineTo(size.width - 20, 0);
@@ -21,7 +21,8 @@ class TCustomCurvedEdges extends CustomClipper<Path> {
     // Top-right corner curve
     final topRightControlPoint = Offset(size.width, 0);
     final topRightEndPoint = Offset(size.width, 20);
-    path.quadraticBezierTo(topRightControlPoint.dx, topRightControlPoint.dy, topRightEndPoint.dx, topRightEndPoint.dy);
+    path.quadraticBezierTo(topRightControlPoint.dx, topRightControlPoint.dy,
+        topRightEndPoint.dx, topRightEndPoint.dy);
 
     // Draw the right edge straight line
     path.lineTo(size.width, size.height);

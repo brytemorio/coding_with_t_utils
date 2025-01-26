@@ -56,7 +56,9 @@ class TBreadcrumbs extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: DefaultTextStyle(
-              style: homeTitleStyle ?? theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.w500),
+              style: homeTitleStyle ??
+                  theme.textTheme.bodySmall!
+                      .copyWith(fontWeight: FontWeight.w500),
               child: homeTitle ?? const Text('Dashboard'),
             ),
           ),
@@ -68,15 +70,21 @@ class TBreadcrumbs extends StatelessWidget {
               const Text(' / '), // Separator
               InkWell(
                 // Make all breadcrumb items clickable except the last one
-                onTap: i == breadcrumbItems.length - 1 ? null : () => Get.toNamed(breadcrumbItems[i]),
+                onTap: i == breadcrumbItems.length - 1
+                    ? null
+                    : () => Get.toNamed(breadcrumbItems[i]),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     capitalize(breadcrumbItems[i]),
                     style: breadcrumbItemsTextStyle ??
                         theme.textTheme.bodySmall!.copyWith(
-                          fontWeight: i == breadcrumbItems.length - 1 ? FontWeight.bold : FontWeight.normal,
-                          color: i == breadcrumbItems.length - 1 ? theme.colorScheme.onSurface : theme.colorScheme.primary,
+                          fontWeight: i == breadcrumbItems.length - 1
+                              ? FontWeight.bold
+                              : FontWeight.normal,
+                          color: i == breadcrumbItems.length - 1
+                              ? theme.colorScheme.onSurface
+                              : theme.colorScheme.primary,
                         ),
                   ),
                 ),

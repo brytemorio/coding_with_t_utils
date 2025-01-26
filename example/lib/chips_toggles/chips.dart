@@ -40,8 +40,10 @@ class TChipsExample extends StatelessWidget {
           selectedTextColor: Colors.blue,
           unselectedTextColor: Colors.grey,
           backgroundColor: Colors.amberAccent,
-          customCheckmarkIcon: Icon(Icons.health_and_safety_rounded, color: Colors.blue),
-          borderShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          customCheckmarkIcon:
+              Icon(Icons.health_and_safety_rounded, color: Colors.blue),
+          borderShape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           onSelected: (isSelected) {
             // Handle selection
           },
@@ -53,7 +55,8 @@ class TChipsExample extends StatelessWidget {
           selectedTextColor: Colors.blue,
           unselectedTextColor: Colors.grey,
           backgroundColor: Colors.amberAccent,
-          borderShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          borderShape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           onSelected: (isSelected) {
             // Handle selection
           },

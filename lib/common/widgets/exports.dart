@@ -2,35 +2,43 @@
 export 'appbar/appbar.dart';
 export 'appbar/sliver_appbar.dart';
 export 'appbar/tabbar.dart';
-
 // Breadcrumbs
 export 'breadcrumbs/breadcrumb.dart';
 export 'breadcrumbs/breadcrumb_with_heading.dart';
-
+export 'chips/animated_icon_switch.dart';
+export 'chips/animated_switch.dart';
+// Choice_chip
 export 'chips/choice_chip.dart';
-
-export 'custom_shapes/containers/custom_container.dart';
-
+export 'containers/custom_container.dart';
+// Containers
+export 'containers/form_container.dart';
+// Custom Shapes
 export 'custom_shapes/curved_edges/curved_edges.dart';
 export 'custom_shapes/curved_edges/curved_edges_widget.dart';
-
+// Table
+export 'data_table/data_table.dart';
+export 'data_table/paginated_data_table.dart';
+export 'data_table/table_header.dart';
+// Dividers
+export 'dividers/divider.dart';
+export 'dropdowns/country_code_picker.dart';
+export 'dropdowns/phone_with_country_code_picker.dart';
+// Dropdown
+export 'dropdowns/searchable_dropdown.dart';
+// Icons
 export 'icons/t_circular_icon.dart';
-
-export 'images/t_circular_image.dart';
-export 'images/t_rounded_image.dart';
-
+export 'icons/table_action_icon_buttons.dart';
+// Images
+export 'images/image_uploader.dart';
+export 'images/t_image.dart';
+// Layouts
 export 'layouts/grid_layout.dart';
-
+export 'layouts/headers/header.dart';
+export 'layouts/templates/login_template.dart';
+export 'loaders/animation_loader.dart';
 export 'loaders/circular_loader.dart';
-
-export 'login_signup/form_divider.dart';
-export 'login_signup/country_code_picker.dart';
-export 'login_signup/phone_with_country_code_picker.dart';
-
-export 'shimmers/boxes_shimmer.dart';
-export 'shimmers/shimmer.dart';
-export 'shimmers/list_tile_shimmer.dart';
-
+// Loaders
+export 'loaders/shimmer.dart';
 // Texts
 export 'texts/page_heading.dart';
 export 'texts/text_with_icon.dart';

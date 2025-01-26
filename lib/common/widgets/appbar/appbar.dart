@@ -72,8 +72,10 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: AppBar(
-        backgroundColor: backgroundColor ?? (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
-        automaticallyImplyLeading: false, // Prevents default back arrow rendering.
+        backgroundColor: backgroundColor ??
+            (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
+        automaticallyImplyLeading:
+            false, // Prevents default back arrow rendering.
         leading: showBackArrow
             ? IconButton(
                 onPressed: () => Navigator.pop(context),
@@ -87,7 +89,9 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                     onPressed: leadingOnPressed,
                     icon: Icon(
                       leadingIcon,
-                      color: isDarkMode ? TColors.iconPrimaryLight : TColors.iconPrimaryDark,
+                      color: isDarkMode
+                          ? TColors.iconPrimaryLight
+                          : TColors.iconPrimaryDark,
                     ),
                   )
                 : null,

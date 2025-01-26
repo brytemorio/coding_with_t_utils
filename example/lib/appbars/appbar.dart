@@ -12,7 +12,10 @@ class CustomAppBarExampleScreen extends StatelessWidget {
       appBar: TAppBar(
         // Custom title
         title: Text('Custom AppBar Example'),
-        titleStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: TColors.textPrimary),
+        titleStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: TColors.textPrimary),
 
         // Enables the back arrow & when this is true, [leadingIcon & leadingOnPressed] will not work
         showBackArrow: true,
@@ -22,7 +25,8 @@ class CustomAppBarExampleScreen extends StatelessWidget {
 
         // Handle leading icon action
         leadingOnPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Menu button pressed')));
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Menu button pressed')));
         },
 
         // Action widgets on the right
@@ -31,14 +35,16 @@ class CustomAppBarExampleScreen extends StatelessWidget {
             icon: Icon(Icons.search, color: TColors.iconPrimaryLight),
             onPressed: () {
               // Handle search action
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Search button pressed')));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Search button pressed')));
             },
           ),
           IconButton(
             icon: Icon(Icons.more_vert, color: TColors.iconPrimaryLight),
             onPressed: () {
               // Handle more options action
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('More button pressed')));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('More button pressed')));
             },
           ),
         ],

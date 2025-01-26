@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/helpers/helper_functions.dart';
-import '../custom_shapes/containers/custom_container.dart';
+import '../containers/custom_container.dart';
 
 /// A customized choice chip that can act like a radio button.
 class TChoiceChip extends StatelessWidget {
@@ -44,7 +44,10 @@ class TChoiceChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labelTextStyle = TextStyle(color: selected ? selectedTextColor ?? TColors.white : unselectedTextColor);
+    final labelTextStyle = TextStyle(
+        color: selected
+            ? selectedTextColor ?? TColors.white
+            : unselectedTextColor);
 
     return Theme(
       data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
@@ -56,22 +59,29 @@ class TChoiceChip extends StatelessWidget {
                     height: 24,
                     circular: true,
                     padding: EdgeInsets.all(0),
-                    backgroundColor: backgroundColor ?? THelperFunctions.restoreColorFromValue(text),
-                    child: (selected ? customCheckmarkIcon ?? Icon(Icons.check, color: Colors.white) : SizedBox.shrink()),
+                    backgroundColor: backgroundColor ??
+                        THelperFunctions.restoreColorFromValue(text),
+                    child: (selected
+                        ? customCheckmarkIcon ??
+                            Icon(Icons.check, color: Colors.white)
+                        : SizedBox.shrink()),
                   )
                 : TContainer(
                     width: 24,
                     height: 24,
                     circular: true,
-                    backgroundColor: backgroundColor ?? THelperFunctions.restoreColorFromValue(text),
+                    backgroundColor: backgroundColor ??
+                        THelperFunctions.restoreColorFromValue(text),
                   )
             : selected
                 ? showCheckmark
-                    ? customCheckmarkIcon ?? Icon(Icons.check_circle, color: Colors.white)
+                    ? customCheckmarkIcon ??
+                        Icon(Icons.check_circle, color: Colors.white)
                     : SizedBox.shrink()
                 : SizedBox.shrink(),
         showCheckmark: false,
-        chipAnimationStyle: ChipAnimationStyle(enableAnimation: AnimationStyle(curve: ElasticInCurve())),
+        chipAnimationStyle: ChipAnimationStyle(
+            enableAnimation: AnimationStyle(curve: ElasticInCurve())),
         selected: selected,
         onSelected: onSelected,
         labelStyle: labelTextStyle,
@@ -79,8 +89,10 @@ class TChoiceChip extends StatelessWidget {
         padding: isColorAttribute ? const EdgeInsets.all(0) : null,
         labelPadding: isColorAttribute ? const EdgeInsets.all(0) : null,
         shape: borderShape ?? (isColorAttribute ? const CircleBorder() : null),
-        selectedColor:
-            (isColorAttribute ? THelperFunctions.restoreColorFromValue(text).withValues(alpha: 0.2) : backgroundColor ?? TColors.primary),
+        selectedColor: (isColorAttribute
+            ? THelperFunctions.restoreColorFromValue(text)
+                .withValues(alpha: 0.2)
+            : backgroundColor ?? TColors.primary),
       ),
     );
   }

@@ -80,14 +80,14 @@ class TSliverAppBar extends StatelessWidget {
   /// Background color of the AppBar.
   final Color? backgroundColor;
 
-
   @override
   Widget build(BuildContext context) {
     // Check if dark mode is enabled to adjust colors dynamically
     final isDarkMode = THelperFunctions.isDarkMode(context);
 
     return SliverAppBar(
-      backgroundColor: backgroundColor ?? (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
+      backgroundColor: backgroundColor ??
+          (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
 
       // Disable automatic leading widget to customize the leading behavior
       automaticallyImplyLeading: false,
@@ -106,10 +106,13 @@ class TSliverAppBar extends StatelessWidget {
       // Leading widget: either back arrow or custom icon
       leading: showBackArrow
           ? IconButton(
-              onPressed: () => Navigator.pop(context), // Generic navigation back
+              onPressed: () =>
+                  Navigator.pop(context), // Generic navigation back
               icon: Icon(
                 Iconsax.arrow_left,
-                color: isDarkMode ? TColors.iconPrimaryDark : TColors.iconPrimaryLight,
+                color: isDarkMode
+                    ? TColors.iconPrimaryDark
+                    : TColors.iconPrimaryLight,
               ),
             )
           : leadingIcon != null
@@ -119,7 +122,9 @@ class TSliverAppBar extends StatelessWidget {
       // Title for the app bar (visible when collapsed)
       title: (!useTitleInFlexibleSpace && title != null)
           ? DefaultTextStyle.merge(
-              style: titleStyle ?? TextStyle(color: isDarkMode ? TColors.white : TColors.textPrimary),
+              style: titleStyle ??
+                  TextStyle(
+                      color: isDarkMode ? TColors.white : TColors.textPrimary),
               child: title!,
             )
           : null,
@@ -133,12 +138,20 @@ class TSliverAppBar extends StatelessWidget {
               ? FlexibleSpaceBar(
                   title: title != null
                       ? DefaultTextStyle.merge(
-                          style: titleStyle ?? TextStyle(color: isDarkMode ? TColors.white : TColors.textPrimary),
+                          style: titleStyle ??
+                              TextStyle(
+                                  color: isDarkMode
+                                      ? TColors.white
+                                      : TColors.textPrimary),
                           child: title!,
                         )
                       : null,
                   centerTitle: true,
-                  background: background ?? Container(color: isDarkMode ? TColors.darkBackground : TColors.primaryBackground),
+                  background: background ??
+                      Container(
+                          color: isDarkMode
+                              ? TColors.darkBackground
+                              : TColors.primaryBackground),
                 )
               : null),
     );

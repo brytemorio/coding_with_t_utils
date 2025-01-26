@@ -24,8 +24,6 @@ class TPlatformException implements Exception {
         return 'The provided user ID is already in use by another user.';
       case 'sign_in_failed':
         return 'Sign-in failed. Please try again.';
-      case 'sign_in_canceled':
-        return 'Sign-in failed. Please try again.';
       case 'network-request-failed':
         return 'Network request failed. Please check your internet connection.';
       case 'internal-error':
@@ -36,7 +34,7 @@ class TPlatformException implements Exception {
         return 'Invalid verification ID. Please request a new verification code.';
       case 'quota-exceeded':
         return 'Quota exceeded. Please try again later.';
-    // Add more cases as needed...
+      // Add more cases as needed...
       default:
         return 'An unexpected platform error occurred. Please try again.';
     }

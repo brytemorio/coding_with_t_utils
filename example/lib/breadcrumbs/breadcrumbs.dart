@@ -16,7 +16,8 @@ class TBreadcrumbWithHeading extends StatelessWidget {
       },
       returnToPreviousScreen: true,
       breadcrumbItems: ['/categories', 'Update Brand'],
-      breadcrumbItemsTextStyle: const TextStyle(fontSize: 14, color: Colors.black87),
+      breadcrumbItemsTextStyle:
+          const TextStyle(fontSize: 14, color: Colors.black87),
     );
   }
 }

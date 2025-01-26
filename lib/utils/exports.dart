@@ -1,5 +1,6 @@
 export 'constants/exports.dart';
 export 'device/device_utility.dart';
+export 'device/web_material_scroll.dart';
 export 'exceptions/exports.dart';
 export 'formatters/formatter.dart';
 export 'helpers/exports.dart';

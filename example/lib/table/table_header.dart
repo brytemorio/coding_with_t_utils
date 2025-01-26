@@ -25,7 +25,10 @@ class TTableHeaderExample extends StatelessWidget {
         DropdownButton<String>(
           value: 'Active',
           onChanged: (value) => print('Filter: $value'),
-          items: ['Active', 'Inactive', 'Pending'].map((status) => DropdownMenuItem(value: status, child: Text(status))).toList(),
+          items: ['Active', 'Inactive', 'Pending']
+              .map((status) =>
+                  DropdownMenuItem(value: status, child: Text(status)))
+              .toList(),
         ),
       ],
       onSort: () => print('Sort'),

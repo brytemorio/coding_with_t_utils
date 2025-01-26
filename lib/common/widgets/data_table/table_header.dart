@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/exports.dart';
 
@@ -115,12 +114,12 @@ class TTableHeader extends StatelessWidget {
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: searchController?.text.isNotEmpty == true
                       ? IconButton(
-                    icon: const Icon(Icons.clear),
-                    onPressed: () {
-                      searchController?.clear();
-                      if (onSearchChanged != null) onSearchChanged!('');
-                    },
-                  )
+                          icon: const Icon(Icons.clear),
+                          onPressed: () {
+                            searchController?.clear();
+                            if (onSearchChanged != null) onSearchChanged!('');
+                          },
+                        )
                       : null,
                   fillColor: Colors.white,
                   filled: true,

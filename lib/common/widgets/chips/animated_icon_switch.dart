@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
 
-
 class TIconToggleSwitch<T> extends StatelessWidget {
-
   /// A customizable rolling icon toggle switch.
   ///
   /// Features:
@@ -110,7 +108,8 @@ class TIconToggleSwitch<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Ensure the options and icons lists have matching lengths.
-    assert(options.length == icons.length, 'The number of options and icons must match.');
+    assert(options.length == icons.length,
+        'The number of options and icons must match.');
 
     return AnimatedToggleSwitch<T>.rolling(
       current: current,
@@ -127,7 +126,9 @@ class TIconToggleSwitch<T> extends StatelessWidget {
         int index = options.indexOf(t);
         return Icon(
           icons[index],
-          color: t == current ? activeColor ?? TColors.primary : inactiveColor ?? Colors.grey,
+          color: t == current
+              ? activeColor ?? TColors.primary
+              : inactiveColor ?? Colors.grey,
           size: iconSize,
         );
       },
