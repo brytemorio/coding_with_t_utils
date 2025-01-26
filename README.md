@@ -38,6 +38,7 @@ dependencies:
   t_utils:
     git:
       url: https://github.com/CodingwithTea/t_utils.git
+      ref: v2.0.0
 ```
 
 Local Usage
@@ -46,6 +47,22 @@ Local Usage
 dependencies:
   t_utils:
     path: /path/to/t_utils
+```
+
+### Step # 3: Push Changes to Github
+
+- Push new changes on the Git using tagging.
+- Create new tag using
+
+```shell
+git tag v2.0.0
+```
+
+- Then push the code using
+
+```shell
+git push origin main
+git push origin v2.0.0
 ```
 
 ### Additional Information
