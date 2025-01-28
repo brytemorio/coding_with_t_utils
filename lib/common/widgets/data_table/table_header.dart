@@ -63,7 +63,9 @@ class TTableHeader extends StatelessWidget {
         final isMobile = TDeviceUtils.isMobileScreen(context);
 
         return Padding(
-          padding: EdgeInsets.symmetric(vertical: TSizes.spaceBtwItems, horizontal: TSizes.spaceBtwItems / 2),
+          padding: EdgeInsets.symmetric(
+              vertical: TSizes.spaceBtwItems,
+              horizontal: TSizes.spaceBtwItems / 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -123,7 +125,9 @@ class TTableHeader extends StatelessWidget {
                       : null,
                   fillColor: Colors.white,
                   filled: true,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(TSizes.borderRadiusLg)),
+                  border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(TSizes.borderRadiusLg)),
                 ),
               ),
             ],

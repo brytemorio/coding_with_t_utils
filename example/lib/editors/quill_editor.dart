@@ -17,11 +17,14 @@ class TTextEditorExample extends StatelessWidget {
             print("Content updated: $content");
           },
         ),
-
         const SizedBox(height: 12),
-
-        ElevatedButton(onPressed: () => print(controller.getDescription()), child: Text('Print Description')),
-        ElevatedButton(onPressed: () => controller.setDescription('"[{"insert":"ssss\n\n\nsd sasda"},{"insert":"\n","attributes":{"list":"bullet"}},{"insert":"asdsad"},{"insert":"sdsad","attributes":{"bold":true}},{"insert":"\n","attributes":{"list":"bullet"}}]"'), child: Text('Set Description')),
+        ElevatedButton(
+            onPressed: () => print(controller.getDescription()),
+            child: Text('Print Description')),
+        ElevatedButton(
+            onPressed: () => controller.setDescription(
+                '"[{"insert":"ssss\n\n\nsd sasda"},{"insert":"\n","attributes":{"list":"bullet"}},{"insert":"asdsad"},{"insert":"sdsad","attributes":{"bold":true}},{"insert":"\n","attributes":{"list":"bullet"}}]"'),
+            child: Text('Set Description')),
       ],
     );
   }

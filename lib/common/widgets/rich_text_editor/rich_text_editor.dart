@@ -106,7 +106,8 @@ class _TTextEditorState extends State<TTextEditor> {
         // Label
         Text(
           widget.label,
-          style: widget.labelStyle ?? const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: widget.labelStyle ??
+              const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
 

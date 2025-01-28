@@ -47,15 +47,20 @@ class MyHomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Appbars
-              Text('Appbar\'s', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Appbar\'s',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => CustomAppBarExampleScreen())),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => CustomAppBarExampleScreen())),
                 child: Text('Custom Appbar'),
               ),
               SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TSliverAppBarExample())),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => TSliverAppBarExample())),
                 child: Text('Sliver Appbar'),
               ),
 
@@ -64,7 +69,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Editor
-              Text('Editor', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Editor',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TTextEditorExample(),
 
@@ -73,7 +79,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Dropdown
-              Text('Dropdown', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Dropdown',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TDropdownExample(),
 
@@ -86,7 +93,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Breadcrumbs with Heading
-              Text('Breadcrumbs with Heading', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Breadcrumbs with Heading',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TBreadcrumbWithHeading(),
 
@@ -95,7 +103,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Icons
-              Text('Icons', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Icons',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TCircularIconExample(),
 
@@ -104,7 +113,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Toggle Switches
-              Text('Toggle Switches', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Toggle Switches',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TTogglesExample(),
 
@@ -113,7 +123,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Chips
-              Text('Chips and Toggle Switches', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Chips and Toggle Switches',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TChipsExample(),
 
@@ -122,7 +133,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Rounded Container
-              Text('Rounded Container', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Rounded Container',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TRoundedContainerExample(),
 
@@ -131,7 +143,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Form Container
-              Text('Form Container', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Form Container',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TFormContainerExample(),
 
@@ -140,25 +153,32 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 12),
 
               /// Table Header
-              Text('Table Header', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Table Header',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               TTableHeaderExample(),
               SizedBox(height: 16),
 
               /// Table
-              Text('Table', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Table',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TDataTableExample())),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => TDataTableExample())),
                 child: Text('Data Table with Load More'),
               ),
               SizedBox(height: 16),
 
               /// Paginated Table
-              Text('Paginated Table', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text('Paginated Table',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TPaginatedDataTableExample())),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => TPaginatedDataTableExample())),
                 child: Text('Data Table with Load More'),
               ),
 
