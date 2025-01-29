@@ -63,6 +63,15 @@ class TTogglesExample extends StatelessWidget {
             print('Selected: $value');
           },
         ),
+        SizedBox(height: 8),
+        TIconToggleSwitch<bool>(
+          current: true,
+          options: [true, false],
+          icons: [Icons.check_circle, Icons.close_outlined],
+          onChanged: (value) {
+            print('Selected: $value');
+          },
+        ),
       ],
     );
   }

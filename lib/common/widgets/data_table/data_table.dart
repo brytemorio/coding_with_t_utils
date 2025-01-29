@@ -74,8 +74,7 @@ class TDataTable extends StatelessWidget {
     return Column(
       children: [
         TContainer(
-          height: (tableHeight ?? TDeviceUtils.getScreenHeight(context) * 0.7) +
-              (TDeviceUtils.isDesktopScreen(context) ? 70 : 130),
+          height: (tableHeight ?? TDeviceUtils.getScreenHeight(context) * 0.7) + (TDeviceUtils.isDesktopScreen(context) ? 70 : 130),
           child: (isLoading && rows.isEmpty)
               ? const Center(child: CircularProgressIndicator())
               : Column(
@@ -92,8 +91,7 @@ class TDataTable extends StatelessWidget {
                         ),
                       ),
                     SizedBox(
-                      height: tableHeight ??
-                          TDeviceUtils.getScreenHeight(context) * 0.7,
+                      height: tableHeight ?? TDeviceUtils.getScreenHeight(context) * 0.7,
                       child: DataTable2(
                         /// COLUMNS & ROWS
                         rows: rows,
@@ -110,10 +108,8 @@ class TDataTable extends StatelessWidget {
                         checkboxAlignment: Alignment.centerLeft,
 
                         /// HEADER DESIGN
-                        headingTextStyle:
-                            Theme.of(context).textTheme.titleMedium,
-                        headingRowColor: WidgetStateProperty.resolveWith(
-                            (states) => TColors.primaryBackground),
+                        headingTextStyle: Theme.of(context).textTheme.titleMedium,
+                        headingRowColor: WidgetStateProperty.resolveWith((states) => TColors.lightBackground),
                         headingRowDecoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(TSizes.borderRadiusMd),
@@ -133,14 +129,9 @@ class TDataTable extends StatelessWidget {
                         sortColumnIndex: sortColumnIndex,
                         sortArrowBuilder: (bool ascending, bool sorted) {
                           if (sorted) {
-                            return Icon(
-                                ascending
-                                    ? Iconsax.arrow_up_3
-                                    : Iconsax.arrow_down,
-                                size: TSizes.iconSm);
+                            return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes.iconSm);
                           } else {
-                            return Icon(Iconsax.arrow_swap,
-                                size: TSizes.iconSm);
+                            return Icon(Iconsax.arrow_swap, size: TSizes.iconSm);
                           }
                         },
                       ),
@@ -168,18 +159,15 @@ class TDataTable extends StatelessWidget {
         ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Showing ${rows.length} Row(s)',
-                  style: Theme.of(context).textTheme.bodySmall),
+              Text('Showing ${rows.length} Row(s)', style: Theme.of(context).textTheme.bodySmall),
               if (allItemsFetched)
-                Text('You\'re seeing all the records that match your filters!',
-                    style: Theme.of(context).textTheme.bodySmall),
+                Text('You\'re seeing all the records that match your filters!', style: Theme.of(context).textTheme.bodySmall),
               const SizedBox()
             ],
           )
         : Column(
             children: [
-              Text('Showing ${rows.length} Row(s)',
-                  style: Theme.of(context).textTheme.bodySmall),
+              Text('Showing ${rows.length} Row(s)', style: Theme.of(context).textTheme.bodySmall),
               SizedBox(height: TSizes.spaceBtwItems),
               if (allItemsFetched)
                 Text(
@@ -201,9 +189,7 @@ class TDataTable extends StatelessWidget {
         children: [
           SizedBox(
             width: 300,
-            child: ElevatedButton(
-                onPressed: loadMoreButtonOnPressed,
-                child: const Text('Load More')),
+            child: ElevatedButton(onPressed: loadMoreButtonOnPressed, child: const Text('Load More')),
           ),
         ],
       );

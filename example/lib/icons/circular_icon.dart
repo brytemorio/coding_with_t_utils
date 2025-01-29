@@ -29,9 +29,8 @@ class TCircularIconExample extends StatelessWidget {
           width: 64.0,
           height: 64.0,
           size: 32.0,
-          color: Colors.white,
+          color: Colors.blueAccent,
           icon: Icons.settings,
-          backgroundColor: Colors.blueAccent,
           onPressed: () {
             debugPrint('Settings icon pressed');
           },

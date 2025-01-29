@@ -21,8 +21,12 @@ class TIcon extends StatelessWidget {
     this.onPressed,
     this.color,
     this.backgroundColor,
+    this.tooltip,
     this.borderRadius = 100.0,
   });
+
+  /// Tooltip will be shown when hovered
+  final String? tooltip;
 
   /// Width of the container.
   final double? width;
@@ -56,11 +60,17 @@ class TIcon extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: backgroundColor ?? (isDarkMode ? Colors.black.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.1)),
+        color: backgroundColor ??
+            (color != null
+                ? color?.withValues(alpha: 0.1)
+                : isDarkMode
+                    ? Colors.black.withValues(alpha: 0.1)
+                    : Colors.white.withValues(alpha: 0.1)),
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: IconButton(
         padding: EdgeInsets.zero,
+        tooltip: tooltip,
         onPressed: onPressed,
         icon: Icon(
           icon,

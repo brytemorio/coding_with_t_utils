@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:t_utils/common/widgets/exports.dart';
 
 class TTableActionButtons extends StatelessWidget {
   /// Widget for displaying action buttons for table rows
   const TTableActionButtons({
     super.key,
-    this.view = true,
+    this.view = false,
     this.edit = true,
     this.delete = true,
     this.onViewPressed,
@@ -48,21 +50,21 @@ class TTableActionButtons extends StatelessWidget {
       children: [
         if (view)
           _buildIconButton(
-            icon: Icons.visibility,
+            icon: Iconsax.document_text,
             color: Colors.grey,
             onPressed: onViewPressed,
             tooltip: tooltipEnabled ? 'View' : null,
           ),
         if (edit)
           _buildIconButton(
-            icon: Icons.edit,
+            icon: Iconsax.receipt_edit,
             color: Colors.blue,
             onPressed: onEditPressed,
             tooltip: tooltipEnabled ? 'Edit' : null,
           ),
         if (delete)
           _buildIconButton(
-            icon: Icons.delete,
+            icon: Iconsax.trash,
             color: Colors.red,
             onPressed: onDeletePressed,
             tooltip: tooltipEnabled ? 'Delete' : null,
@@ -77,13 +79,6 @@ class TTableActionButtons extends StatelessWidget {
     VoidCallback? onPressed,
     String? tooltip,
   }) {
-    return Padding(
-      padding: EdgeInsets.only(right: spacing),
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Icon(icon, color: color, size: iconSize),
-        tooltip: tooltip,
-      ),
-    );
+    return TIcon(icon: icon, onPressed: onPressed, color: color, tooltip: tooltip);
   }
 }
