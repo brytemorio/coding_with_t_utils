@@ -26,7 +26,7 @@ export 'dropdowns/phone_with_country_code_picker.dart';
 // Dropdown
 export 'dropdowns/searchable_dropdown.dart';
 // Icons
-export 'icons/t_circular_icon.dart';
+export 'icons/t_icon.dart';
 export 'icons/table_action_icon_buttons.dart';
 // Images
 export 'images/image_uploader.dart';

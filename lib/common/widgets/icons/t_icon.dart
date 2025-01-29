@@ -53,25 +53,19 @@ class TIcon extends StatelessWidget {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      width: width ?? 56.0, // Default width
-      height: height ?? 56.0, // Default height
+      width: width,
+      height: height,
       decoration: BoxDecoration(
-        color: backgroundColor ??
-            (isDarkMode
-                ? Colors.black.withValues(alpha: 0.1)
-                : Colors.white.withValues(alpha: 0.1)),
-        borderRadius:
-            BorderRadius.circular(borderRadius), // Customizable border radius
+        color: backgroundColor ?? (isDarkMode ? Colors.black.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.1)),
+        borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: IconButton(
-        padding: EdgeInsets.zero, // Remove padding to fit the icon neatly
+        padding: EdgeInsets.zero,
         onPressed: onPressed,
         icon: Icon(
           icon,
-          color: color ??
-              Theme.of(context)
-                  .primaryColor, // Default color to primary theme color
-          size: size ?? TSizes.lg,
+          color: color ?? Theme.of(context).primaryColor,
+          size: size ?? TSizes.md,
         ),
       ),
     );

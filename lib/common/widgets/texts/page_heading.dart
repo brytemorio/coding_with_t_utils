@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/exports.dart';
-import '../icons/t_circular_icon.dart';
+import '../icons/t_icon.dart';
 
 class TPageHeading extends StatelessWidget {
   const TPageHeading({

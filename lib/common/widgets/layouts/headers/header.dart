@@ -5,7 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/enums.dart';
 import '../../../../utils/exports.dart';
 import '../../appbar/appbar.dart';
-import '../../icons/t_circular_icon.dart';
+import '../../icons/t_icon.dart';
 import '../../images/t_image.dart';
 
 /// A flexible and customizable header widget for use across various screens.

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_utils/common/widgets/icons/t_circular_icon.dart';
+import 'package:t_utils/common/widgets/icons/t_icon.dart';
 import 'package:t_utils/t_utils.dart';
 
 class TCircularIconExample extends StatelessWidget {
