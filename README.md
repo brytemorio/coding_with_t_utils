@@ -55,15 +55,29 @@ dependencies:
 - Create new tag using
 
 ```shell
-git tag v2.0.0
+git tag v2.0.3
 ```
 
 - Then push the code using
 
 ```shell
 git push origin main
-git push origin v2.0.0
+git push origin v2.0.3
 ```
+
+
+### Steps to Update an Existing Tag
+Delete the existing tag locally and remotely
+
+```shell 
+git tag -d v2.0.3
+```
+- Delete the tag from GitHub
+```shell
+git push origin --delete v2.0.3
+``` 
+
+
 
 ### Additional Information
 
