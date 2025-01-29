@@ -63,7 +63,10 @@ class TAnimationLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    assert(isLottieAnimation && animation == null, 'animation cannot be empty if isLottieAnimation is set to true in TAnimationLoader');
+    assert(
+      !(isLottieAnimation && animation == null),
+      'animation cannot be empty if isLottieAnimation is set to true in TAnimationLoader',
+    );
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

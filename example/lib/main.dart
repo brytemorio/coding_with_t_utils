@@ -78,6 +78,13 @@ class MyHomePage extends StatelessWidget {
               Divider(),
               SizedBox(height: 12),
 
+              /// TAnimation Widget
+              TAnimationLoader(),
+
+              SizedBox(height: 12),
+              Divider(),
+              SizedBox(height: 12),
+
               /// Dropdown
               Text('Dropdown',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),

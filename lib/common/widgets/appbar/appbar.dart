@@ -73,7 +73,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: AppBar(
         backgroundColor: backgroundColor ??
-            (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
+            (isDarkMode ? TColors.darkBackground : TColors.white),
         automaticallyImplyLeading:
             false, // Prevents default back arrow rendering.
         leading: showBackArrow
