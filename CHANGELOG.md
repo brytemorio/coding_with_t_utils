@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.8
+- Colors fixed from `TColors.primaryBackground` to `TColors.lightBackground`
+
 ## 2.0.7
 - `animation_loader.dart` assert fixed
 - `THeader` background colors updated
