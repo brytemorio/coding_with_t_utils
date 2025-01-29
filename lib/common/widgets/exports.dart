@@ -9,7 +9,7 @@ export 'chips/animated_icon_switch.dart';
 export 'chips/animated_switch.dart';
 // Choice_chip
 export 'chips/choice_chip.dart';
-export 'containers/custom_container.dart';
+export 'containers/t_container.dart';
 // Containers
 export 'containers/form_container.dart';
 // Custom Shapes

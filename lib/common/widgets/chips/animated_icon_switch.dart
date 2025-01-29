@@ -138,7 +138,7 @@ class TIconToggleSwitch<T> extends StatelessWidget {
           (value) => ToggleStyle(
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
-                indicatorColor: activeColor ?? TColors.primaryBackground,
+                indicatorColor: activeColor ?? TColors.primary.withValues(alpha: 0.1),
                 indicatorBorderRadius: BorderRadius.circular(100),
                 boxShadow: boxShadow,
               ),

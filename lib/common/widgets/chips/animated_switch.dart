@@ -134,7 +134,7 @@ class TAnimatedToggleSwitch extends StatelessWidget {
 
       // Dynamic style builder for indicator color
       styleBuilder: styleBuilder ??
-          (value) => ToggleStyle(indicatorColor: value ? activeColor ?? TColors.primaryBackground : inactiveColor ?? TColors.grey),
+          (value) => ToggleStyle(indicatorColor: value ? activeColor ?? TColors.primary.withValues(alpha: 0.1) : inactiveColor ?? TColors.grey),
     );
   }
 }

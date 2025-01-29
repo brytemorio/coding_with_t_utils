@@ -7,7 +7,7 @@ import '../../../../../../common/widgets/icons/t_icon.dart';
 import '../../../../../../utils/constants/colors.dart';
 import '../../../../../../utils/constants/sizes.dart';
 import '../../../utils/constants/enums.dart';
-import '../containers/custom_container.dart';
+import '../containers/t_container.dart';
 import 't_image.dart';
 
 /// Widget for uploading images with optional editing functionality
@@ -78,7 +78,7 @@ class TImageUploader extends StatelessWidget {
           height: height,
           imageType: imageType,
           memoryImage: memoryImage,
-          backgroundColor: TColors.primaryBackground,
+          backgroundColor: TColors.lightBackground,
           imageShape: circular ? BoxShape.circle : BoxShape.rectangle,
         ),
         // Display the edit icon button on top of the image

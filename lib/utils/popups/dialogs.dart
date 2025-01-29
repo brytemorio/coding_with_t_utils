@@ -26,45 +26,35 @@ class TDialogs {
     Function()? onCancel, // Custom cancel action
     Function()? onConfirm, // Custom confirm action
     bool hideActions = false, // Flag to hide buttons
-    bool canPop =
-        true, // Flag to control dismissing the dialog by tapping outside
+    bool canPop = true, // Flag to control dismissing the dialog by tapping outside
   }) {
-    // Show the dialog using showDialog
     showDialog(
       context: context,
-      barrierDismissible:
-          canPop, // Set if tapping outside will dismiss the dialog
+      barrierDismissible: canPop,
       builder: (BuildContext context) {
         return PopScope(
-          canPop:
-              canPop, // Set if the dialog can be dismissed by pressing the back button
+          canPop: canPop,
           child: AlertDialog(
-            backgroundColor: TColors
-                .primaryBackground, // Use custom background color from TColors
-            title: TTextWithIcon(
-                text: title,
-                icon: Iconsax.box), // Custom title widget with icon
-            content:
-                content ?? // Use provided content, or fallback to default message
-                    Text(
-                      'Removing this data will delete all related data. Are you sure?',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium, // Default text style
-                    ),
+            backgroundColor: TColors.lightBackground,
+            title: TTextWithIcon(text: title, icon: Iconsax.box),
+            content: content ??
+                Text(
+                  'Removing this data will delete all related data. Are you sure?',
+                  style: Theme.of(context).textTheme.bodyMedium, // Default text style
+                ),
             actions: hideActions
-                ? null // If hideActions is true, don't show action buttons
+                ? null
                 : [
                     // Cancel button action, dismisses the dialog or runs custom action
                     OutlinedButton(
                       onPressed: onCancel ?? () => Navigator.of(context).pop(),
-                      child: Text(cancelText), // Display cancel button text
+                      child: Text(cancelText),
                     ),
                     if (onConfirm != null)
                       // If onConfirm is provided, show the confirm button
                       ElevatedButton(
-                        onPressed: onConfirm, // Trigger custom onConfirm action
-                        child: Text(confirmText), // Display confirm button text
+                        onPressed: onConfirm,
+                        child: Text(confirmText),
                       ),
                   ],
           ),

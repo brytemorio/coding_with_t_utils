@@ -66,8 +66,7 @@ class TPaginatedDataTable extends StatelessWidget {
     return SizedBox(
       height: tableHeight,
       child: Theme(
-        data: Theme.of(context).copyWith(
-            cardTheme: const CardTheme(color: Colors.white, elevation: 0)),
+        data: Theme.of(context).copyWith(cardTheme: const CardTheme(color: Colors.white, elevation: 0)),
         child: PaginatedDataTable2(
           source: source,
 
@@ -98,17 +97,11 @@ class TPaginatedDataTable extends StatelessWidget {
                   ],
                 )
               : null,
-          availableRowsPerPage: [
-            rowsPerPage,
-            rowsPerPage * 2,
-            rowsPerPage * 5,
-            rowsPerPage * 10
-          ],
+          availableRowsPerPage: [rowsPerPage, rowsPerPage * 2, rowsPerPage * 5, rowsPerPage * 10],
 
           /// HEADER DESIGN
           headingTextStyle: Theme.of(context).textTheme.titleMedium,
-          headingRowColor: WidgetStateProperty.resolveWith(
-              (states) => TColors.primaryBackground),
+          headingRowColor: WidgetStateProperty.resolveWith((states) => TColors.lightBackground),
           headingRowDecoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(TSizes.borderRadiusMd),
@@ -130,8 +123,7 @@ class TPaginatedDataTable extends StatelessWidget {
           sortColumnIndex: sortColumnIndex,
           sortArrowBuilder: (bool ascending, bool sorted) {
             if (sorted) {
-              return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down,
-                  size: TSizes.iconSm);
+              return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes.iconSm);
             } else {
               return Icon(Iconsax.arrow_swap, size: TSizes.iconSm);
             }

@@ -151,7 +151,7 @@ class TSliverAppBar extends StatelessWidget {
                       Container(
                           color: isDarkMode
                               ? TColors.darkBackground
-                              : TColors.primaryBackground),
+                              : TColors.lightBackground),
                 )
               : null),
     );
