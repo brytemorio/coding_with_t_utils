@@ -41,7 +41,7 @@ class TAnimationLoader extends StatelessWidget {
   final TextStyle? style;
 
   /// The path to the animation asset (Lottie or image).
-  final String animation;
+  final String? animation;
 
   /// Whether to show the action button.
   final bool showAction;
@@ -63,14 +63,15 @@ class TAnimationLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    assert(isLottieAnimation && animation == null, 'animation cannot be empty if isLottieAnimation is set to true in TAnimationLoader');
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Display the animation (can be replaced with Lottie or other formats).
           isLottieAnimation
-              ? Lottie.asset(animation, height: height, width: width, fit: BoxFit.contain)
-              : Image(image: AssetImage(animation), height: height, width: width, fit: BoxFit.contain),
+              ? Lottie.asset(animation!, height: height, width: width, fit: BoxFit.contain)
+              : Image(image: AssetImage(animation ?? 'assets/riding-scooty.png'), height: height, width: width, fit: BoxFit.contain),
           SizedBox(height: TSizes.defaultSpace),
 
           // Display the optional text message below the animation.
