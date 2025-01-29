@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/device/device_utility.dart';
 
 /// A versatile container widget for form layout, supporting rounded corners, shadows, loading states, and more.
 class TFormContainer extends StatelessWidget {
@@ -45,6 +46,7 @@ class TFormContainer extends StatelessWidget {
     this.widthFactor,
     this.maxWidth,
     this.isLoading = false,
+    this.fullWidth = false,
     this.loadingIndicatorColor,
     this.child,
     this.onTap,
@@ -65,6 +67,7 @@ class TFormContainer extends StatelessWidget {
   final double? widthFactor;
   final double? maxWidth;
   final bool isLoading;
+  final bool fullWidth;
   final Color? loadingIndicatorColor;
   final Widget? child;
   final void Function()? onTap;
@@ -76,14 +79,11 @@ class TFormContainer extends StatelessWidget {
       height: height,
       margin: margin,
       padding: padding ?? EdgeInsets.all(TSizes.md),
-      constraints:
-          maxWidth != null ? BoxConstraints(maxWidth: maxWidth!) : null,
+      constraints: maxWidth != null ? BoxConstraints(maxWidth: maxWidth!) : null,
       decoration: BoxDecoration(
         color: backgroundColor ?? TColors.white,
         borderRadius: BorderRadius.circular(radius ?? TSizes.cardRadiusLg),
-        border: showBorder
-            ? border ?? Border.all(color: borderColor ?? TColors.borderPrimary)
-            : null,
+        border: showBorder ? border ?? Border.all(color: borderColor ?? TColors.borderPrimary) : null,
         boxShadow: showShadow
             ? [
                 shadow ??
@@ -102,9 +102,7 @@ class TFormContainer extends StatelessWidget {
           if (isLoading)
             Padding(
               padding: EdgeInsets.only(bottom: TSizes.sm),
-              child: LinearProgressIndicator(
-                  color: loadingIndicatorColor ?? TColors.primary,
-                  minHeight: 2),
+              child: LinearProgressIndicator(color: loadingIndicatorColor ?? TColors.primary, minHeight: 2),
             ),
           child ?? const SizedBox.shrink(),
         ],
@@ -114,10 +112,8 @@ class TFormContainer extends StatelessWidget {
     return Align(
       alignment: formAlignment,
       child: FractionallySizedBox(
-        widthFactor: widthFactor,
-        child: onTap != null
-            ? GestureDetector(onTap: onTap, child: container)
-            : container,
+        widthFactor: !fullWidth ? widthFactor ?? (TDeviceUtils.isDesktopScreen(context) ? 0.5 : null) : null,
+        child: onTap != null ? GestureDetector(onTap: onTap, child: container) : container,
       ),
     );
   }
