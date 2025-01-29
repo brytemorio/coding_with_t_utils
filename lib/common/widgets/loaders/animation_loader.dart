@@ -11,7 +11,7 @@ import '../../../utils/constants/sizes.dart';
 class TAnimationLoader extends StatelessWidget {
   /// Creates a [TAnimationLoader].
   ///
-  /// - [optionalMessage] is the message displayed below the animation.
+  /// - [message] is the message displayed below the animation.
   /// - [animation] is the path to the animation asset (e.g., Lottie or image).
   /// - [showAction] controls the visibility of the action button.
   /// - [actionText] is the label for the action button (optional, required if [showAction] is true).
@@ -20,8 +20,8 @@ class TAnimationLoader extends StatelessWidget {
   /// - [style] customizes the text style for the message.
   const TAnimationLoader({
     super.key,
-    required this.optionalMessage,
-    required this.animation,
+    this.message,
+    this.animation,
     this.showAction = false,
     this.actionText,
     this.onActionPressed,
@@ -35,7 +35,7 @@ class TAnimationLoader extends StatelessWidget {
         );
 
   /// The message displayed below the animation.
-  final Widget optionalMessage;
+  final Widget? message;
 
   /// The style of the text message.
   final TextStyle? style;
@@ -78,7 +78,7 @@ class TAnimationLoader extends StatelessWidget {
           DefaultTextStyle(
             style: style ?? Theme.of(context).textTheme.titleMedium!,
             textAlign: TextAlign.center,
-            child: optionalMessage,
+            child: message ?? Text('Loading your data...'),
           ),
           SizedBox(height: TSizes.defaultSpace),
 

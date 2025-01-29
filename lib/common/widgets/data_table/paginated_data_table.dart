@@ -120,7 +120,7 @@ class TPaginatedDataTable extends StatelessWidget {
           empty: emptyWidget ??
               const TAnimationLoader(
                 animation: 'assets/images/animations/table.gif',
-                optionalMessage: Text('Nothing Found'),
+                message: Text('Nothing Found'),
                 height: 200,
                 width: 200,
               ),
