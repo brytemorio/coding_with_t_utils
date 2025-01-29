@@ -121,7 +121,7 @@ class TDataTable extends StatelessWidget {
                           ),
                         ),
                         empty: emptyWidget ??
-                            TAnimationLoaderWidget(
+                            TAnimationLoader(
                               animation: 'assets/images/animations/table.gif',
                               optionalMessage: Text('Nothing Found'),
                               height: 200,

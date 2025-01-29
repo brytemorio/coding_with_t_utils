@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
@@ -7,8 +8,8 @@ import '../../../utils/constants/sizes.dart';
 ///
 /// This widget can be used to indicate loading or empty states in the UI.
 /// It supports animations, custom text, and an optional action button for user interaction.
-class TAnimationLoaderWidget extends StatelessWidget {
-  /// Creates a [TAnimationLoaderWidget].
+class TAnimationLoader extends StatelessWidget {
+  /// Creates a [TAnimationLoader].
   ///
   /// - [optionalMessage] is the message displayed below the animation.
   /// - [animation] is the path to the animation asset (e.g., Lottie or image).
@@ -17,7 +18,7 @@ class TAnimationLoaderWidget extends StatelessWidget {
   /// - [onActionPressed] is the callback executed when the action button is pressed.
   /// - [height] and [width] set the size of the animation (default: 400x400).
   /// - [style] customizes the text style for the message.
-  const TAnimationLoaderWidget({
+  const TAnimationLoader({
     super.key,
     required this.optionalMessage,
     required this.animation,
@@ -27,9 +28,10 @@ class TAnimationLoaderWidget extends StatelessWidget {
     this.height = 400,
     this.width = 400,
     this.style,
+    this.isLottieAnimation = false,
   }) : assert(
           !showAction || (showAction && actionText != null),
-          'actionText must be provided when showAction is true.',
+          'actionText must be provided when showAction is true, in TAnimationLoader.',
         );
 
   /// The message displayed below the animation.
@@ -43,6 +45,9 @@ class TAnimationLoaderWidget extends StatelessWidget {
 
   /// Whether to show the action button.
   final bool showAction;
+
+  /// Whether a Lottie animation or simple gif.
+  final bool isLottieAnimation;
 
   /// The label for the action button.
   final String? actionText;
@@ -63,12 +68,9 @@ class TAnimationLoaderWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Display the animation (can be replaced with Lottie or other formats).
-          Image(
-            image: AssetImage(animation),
-            height: height,
-            width: width,
-            fit: BoxFit.contain,
-          ),
+          isLottieAnimation
+              ? Lottie.asset(animation, height: height, width: width, fit: BoxFit.contain)
+              : Image(image: AssetImage(animation), height: height, width: width, fit: BoxFit.contain),
           SizedBox(height: TSizes.defaultSpace),
 
           // Display the optional text message below the animation.
@@ -87,10 +89,7 @@ class TAnimationLoaderWidget extends StatelessWidget {
                 onPressed: onActionPressed,
                 child: Text(
                   actionText ?? 'Action',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .apply(color: TColors.lightBackground),
+                  style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.lightBackground),
                 ),
               ),
             ),

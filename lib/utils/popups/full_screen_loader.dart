@@ -30,7 +30,7 @@ class TFullScreenLoader {
           child: Column(
             children: [
               const SizedBox(height: 250), // Adjust the spacing as needed
-              TAnimationLoaderWidget(
+              TAnimationLoader(
                   animation: animation, optionalMessage: Text(text)),
             ],
           ),

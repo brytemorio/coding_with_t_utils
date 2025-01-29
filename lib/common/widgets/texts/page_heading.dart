@@ -23,14 +23,14 @@ class TPageHeading extends StatelessWidget {
       children: [
         if (iconData != null)
           TIcon(
-              icon: iconData!,
-              backgroundColor: TColors.primary,
-              color: TColors.white),
+            icon: iconData!,
+            backgroundColor: TColors.primary,
+            color: TColors.white,
+          ),
         if (iconData != null) SizedBox(width: TSizes.spaceBtwItems),
 
         // Show Heading Only
-        if (subHeading == null)
-          Text(heading, style: Theme.of(context).textTheme.headlineLarge),
+        if (subHeading == null) Text(heading, style: Theme.of(context).textTheme.headlineLarge),
 
         // Show Heading and Sub Heading
         if (subHeading != null)
@@ -38,8 +38,11 @@ class TPageHeading extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(heading, style: Theme.of(context).textTheme.headlineLarge),
-              Text(subHeading!,
-                  style: Theme.of(context).textTheme.bodyMedium, maxLines: 2),
+              Text(
+                subHeading!,
+                style: Theme.of(context).textTheme.bodyMedium,
+                maxLines: 2,
+              ),
             ],
           ),
         rightSideWidget ?? const SizedBox(),
