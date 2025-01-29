@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.9
+- `TImage` background removed
+- `TAdminHeader` **`actions`** added
+- `TLoaderAnimation` widget image not showing fixed
+
 ## 2.0.8
 - Colors fixed from `TColors.primaryBackground` to `TColors.lightBackground`
 

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../utils/constants/enums.dart';
 import '../../../../utils/exports.dart';
 import '../../appbar/appbar.dart';
 import '../../icons/t_icon.dart';
@@ -87,12 +86,9 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: TSizes.md, vertical: TSizes.sm),
       child: TAppBar(
-        leadingIcon: showMenu && !TDeviceUtils.isDesktopScreen(context)
-            ? Iconsax.menu
-            : leadingIcon,
-        leadingOnPressed: showMenu && !TDeviceUtils.isDesktopScreen(context)
-            ? () => scaffoldKey.currentState?.openDrawer()
-            : leadingOnPressed,
+        leadingIcon: showMenu && !TDeviceUtils.isDesktopScreen(context) ? Iconsax.menu : leadingIcon,
+        leadingOnPressed:
+            showMenu && !TDeviceUtils.isDesktopScreen(context) ? () => scaffoldKey.currentState?.openDrawer() : leadingOnPressed,
         title: Row(
           children: [
             // Conditionally show search field on desktop
@@ -100,15 +96,15 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
               SizedBox(
                 width: 600,
                 child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.search_normal),
-                      hintText: searchHint),
+                  decoration: InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: searchHint),
                 ),
               ),
             if (title != null) title!, // Custom title
           ],
         ),
         actions: [
+          ...actions,
+
           // Conditionally show Order icon
           if (showOrderIcon)
             TIcon(
@@ -140,13 +136,9 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(width: TSizes.spaceBtwItems / 2),
 
           // Profile section
-          if (profileImage != null ||
-              profileName != null ||
-              profileEmail != null)
+          if (profileImage != null || profileName != null || profileEmail != null)
             InkWell(
-              onTap: profileRoute != null
-                  ? () => Get.toNamed(profileRoute!)
-                  : null,
+              onTap: profileRoute != null ? () => Get.toNamed(profileRoute!) : null,
               child: Row(
                 children: [
                   // Display profile image if available
@@ -163,11 +155,9 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(profileName!,
-                            style: Theme.of(context).textTheme.titleLarge),
+                        Text(profileName!, style: Theme.of(context).textTheme.titleLarge),
                         SizedBox(height: TSizes.spaceBtwItems / 2),
-                        Text(profileEmail!,
-                            style: Theme.of(context).textTheme.labelMedium),
+                        Text(profileEmail!, style: Theme.of(context).textTheme.labelMedium),
                       ],
                     ),
                 ],
@@ -179,6 +169,5 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(TDeviceUtils.getAppBarHeight() + 15);
+  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight() + 15);
 }

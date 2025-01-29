@@ -42,3 +42,6 @@ export 'loaders/shimmer.dart';
 // Texts
 export 'texts/page_heading.dart';
 export 'texts/text_with_icon.dart';
+// Editor
+export 'rich_text_editor/editor_controller.dart';
+export 'rich_text_editor/rich_text_editor.dart';

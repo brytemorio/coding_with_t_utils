@@ -25,8 +25,8 @@ class TAnimationLoader extends StatelessWidget {
     this.showAction = false,
     this.actionText,
     this.onActionPressed,
-    this.height = 400,
-    this.width = 400,
+    this.height = 200,
+    this.width = 200,
     this.style,
     this.isLottieAnimation = false,
   }) : assert(
@@ -74,7 +74,7 @@ class TAnimationLoader extends StatelessWidget {
           // Display the animation (can be replaced with Lottie or other formats).
           isLottieAnimation
               ? Lottie.asset(animation!, height: height, width: width, fit: BoxFit.contain)
-              : Image(image: AssetImage(animation ?? 'assets/riding-scooty.png'), height: height, width: width, fit: BoxFit.contain),
+              : Image(image: AssetImage(animation ?? 'packages/t_utils/assets/riding.gif'), height: height, width: width, fit: BoxFit.contain),
           SizedBox(height: TSizes.defaultSpace),
 
           // Display the optional text message below the animation.

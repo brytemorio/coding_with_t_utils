@@ -92,11 +92,9 @@ class TImage extends StatelessWidget {
       padding: EdgeInsets.all(padding ?? 8.0),
       decoration: BoxDecoration(
         border: border,
-        color: backgroundColor ??
-            Colors.grey[200], // Default background color if not specified
-        shape: imageShape, // Use BoxShape for circular or rectangular images
-        borderRadius:
-            _getBorderRadius(), // Use the helper function to get the border radius
+        shape: imageShape,
+        color: backgroundColor,
+        borderRadius: _getBorderRadius(),
       ),
       child: _buildImageWidget(),
     );
@@ -122,8 +120,7 @@ class TImage extends StatelessWidget {
                 ? width!
                 : height!
             : width!
-        : height ??
-            100; // Default value for radius if no width/height is provided
+        : height ?? 100; // Default value for radius if no width/height is provided
   }
 
   // Builds the image widget based on the imageType
@@ -146,8 +143,7 @@ class TImage extends StatelessWidget {
     }
 
     return ClipRRect(
-      borderRadius:
-          applyImageRadius ? _getBorderRadius() : BorderRadius.circular(0),
+      borderRadius: applyImageRadius ? _getBorderRadius() : BorderRadius.circular(0),
       child: imageWidget,
     );
   }
@@ -161,8 +157,7 @@ class TImage extends StatelessWidget {
         color: overlayColor,
         width: width,
         height: height,
-        placeholder: (context, url) =>
-            TShimmerEffect(width: 56, height: 56, radius: borderRadius ?? 8.0),
+        placeholder: (context, url) => TShimmerEffect(width: 56, height: 56, radius: borderRadius ?? 8.0),
         errorWidget: (context, url, error) => _errorImageWidget(),
       );
     } else {
@@ -173,8 +168,7 @@ class TImage extends StatelessWidget {
   // Builds the memory image widget
   Widget _buildMemoryImage() {
     if (memoryImage != null) {
-      return Image.memory(memoryImage!,
-          fit: fit ?? BoxFit.contain, color: overlayColor);
+      return Image.memory(memoryImage!, fit: fit ?? BoxFit.contain, color: overlayColor);
     } else {
       return _errorImageWidget();
     }
@@ -192,8 +186,7 @@ class TImage extends StatelessWidget {
   // Builds the asset image widget
   Widget _buildAssetImage() {
     if (image != null) {
-      return Image.asset(image!,
-          fit: fit ?? BoxFit.contain, color: overlayColor);
+      return Image.asset(image!, fit: fit ?? BoxFit.contain, color: overlayColor);
     } else {
       return _errorImageWidget();
     }
