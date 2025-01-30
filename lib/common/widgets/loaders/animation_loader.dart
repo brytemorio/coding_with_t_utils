@@ -13,7 +13,9 @@ class TAnimationLoader extends StatelessWidget {
   ///
   /// - [message] is the message displayed below the animation.
   /// - [animation] is the path to the animation asset (e.g., Lottie or image).
+  /// - [isLottieAnimation] Weather this is a Lottie or simple gif/image.
   /// - [showAction] controls the visibility of the action button.
+  /// - [actionChild] Optional Child widget for the actions at the bottom of animation.
   /// - [actionText] is the label for the action button (optional, required if [showAction] is true).
   /// - [onActionPressed] is the callback executed when the action button is pressed.
   /// - [height] and [width] set the size of the animation (default: 400x400).
@@ -28,6 +30,7 @@ class TAnimationLoader extends StatelessWidget {
     this.height = 200,
     this.width = 200,
     this.style,
+    this.actionChild,
     this.isLottieAnimation = false,
   }) : assert(
           !showAction || (showAction && actionText != null),
@@ -36,6 +39,9 @@ class TAnimationLoader extends StatelessWidget {
 
   /// The message displayed below the animation.
   final Widget? message;
+
+  /// The message displayed below the animation.
+  final Widget? actionChild;
 
   /// The style of the text message.
   final TextStyle? style;
@@ -74,7 +80,8 @@ class TAnimationLoader extends StatelessWidget {
           // Display the animation (can be replaced with Lottie or other formats).
           isLottieAnimation
               ? Lottie.asset(animation!, height: height, width: width, fit: BoxFit.contain)
-              : Image(image: AssetImage(animation ?? 'packages/t_utils/assets/riding.gif'), height: height, width: width, fit: BoxFit.contain),
+              : Image(
+                  image: AssetImage(animation ?? 'packages/t_utils/assets/riding.gif'), height: height, width: width, fit: BoxFit.contain),
           SizedBox(height: TSizes.defaultSpace),
 
           // Display the optional text message below the animation.
@@ -87,16 +94,14 @@ class TAnimationLoader extends StatelessWidget {
 
           // Show the action button if enabled.
           if (showAction)
-            SizedBox(
-              width: 250,
-              child: OutlinedButton(
-                onPressed: onActionPressed,
-                child: Text(
-                  actionText ?? 'Action',
-                  style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.lightBackground),
+            actionChild ??
+                OutlinedButton(
+                  onPressed: onActionPressed,
+                  child: Text(
+                    actionText ?? 'Action',
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.lightBackground),
+                  ),
                 ),
-              ),
-            ),
         ],
       ),
     );

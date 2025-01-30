@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.10
+- `TAnimationLoader` `actionChild` Optional Child widget created for the actions at the bottom of animation.
+- `fullWidth` option added in the `TFormContainer`
+
 ## 2.0.9
 - `TImage` background removed
 - `TAdminHeader` **`actions`** added

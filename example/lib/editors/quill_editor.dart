@@ -22,8 +22,7 @@ class TTextEditorExample extends StatelessWidget {
             onPressed: () => print(controller.getDescription()),
             child: Text('Print Description')),
         ElevatedButton(
-            onPressed: () => controller.setDescription(
-                '"[{"insert":"ssss\n\n\nsd sasda"},{"insert":"\n","attributes":{"list":"bullet"}},{"insert":"asdsad"},{"insert":"sdsad","attributes":{"bold":true}},{"insert":"\n","attributes":{"list":"bullet"}}]"'),
+            onPressed: () => controller.setDescription(''),
             child: Text('Set Description')),
       ],
     );

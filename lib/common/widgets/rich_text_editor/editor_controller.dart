@@ -10,17 +10,13 @@ class TTextController {
   TTextController({String? initialText, bool isReadOnly = false})
       : _quillController = quill.QuillController(
           readOnly: isReadOnly,
-          document: initialText != null && initialText.isNotEmpty
-              ? quill.Document.fromJson(jsonDecode(initialText))
-              : quill.Document(),
-          selection: const TextSelection.collapsed(
-              offset: 0, affinity: TextAffinity.downstream),
+          document: initialText != null && initialText.isNotEmpty ? quill.Document.fromJson(jsonDecode(initialText)) : quill.Document(),
+          selection: const TextSelection.collapsed(offset: 0, affinity: TextAffinity.downstream),
         );
 
   /// Get the current text as a JSON string.
   String getDescription() {
-    final jsonContent =
-        jsonEncode(_quillController.document.toDelta().toJson());
+    final jsonContent = jsonEncode(_quillController.document.toDelta().toJson());
     return jsonContent.toString();
   }
 

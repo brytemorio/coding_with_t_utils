@@ -79,6 +79,7 @@ class TFormContainerExample extends StatelessWidget {
         TFormContainer(
           isLoading: false,
           showShadow: true,
+          fullWidth: true,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
