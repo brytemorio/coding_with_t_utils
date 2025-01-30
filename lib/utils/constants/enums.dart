@@ -3,52 +3,23 @@
       They cannot be created inside a class.
 -- */
 
+/// Dropdown popup display styles
+enum DropdownPopupStyle { modal, bottomSheet, menu, dialog }
+
 enum TextSizes { small, medium, large }
 
 enum ImageType { asset, network, memory, file }
 
 enum PaymentStatus { unpaid, paid, refunded, pendingRefund, failed }
 
-enum VerificationStatus {
-  unknown,
-  pending,
-  submitted,
-  underReview,
-  approved,
-  rejected
-}
 
-enum OrderStatus {
-  pending,
-  processing,
-  shipped,
-  delivered,
-  canceled,
-  returned,
-  refunded
-}
+enum VerificationStatus { unknown, pending, submitted, underReview, approved, rejected }
 
-enum ActivityType {
-  orderCreated,
-  processing,
-  paymentReceived,
-  shipped,
-  delivered,
-  returned,
-  canceled
-}
+enum OrderStatus { pending, processing, shipped, delivered, canceled, returned, refunded }
 
-enum PaymentMethods {
-  paypal,
-  googlePay,
-  applePay,
-  visa,
-  masterCard,
-  creditCard,
-  paystack,
-  razorPay,
-  paytm
-}
+enum ActivityType { orderCreated, processing, paymentReceived, shipped, delivered, returned, canceled }
+
+enum PaymentMethods { paypal, googlePay, applePay, visa, masterCard, creditCard, paystack, razorPay, paytm }
 
 enum UnitType {
   unitLess,

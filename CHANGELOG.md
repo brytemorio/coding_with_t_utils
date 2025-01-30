@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.11
+- `TDropdown` Widget finalized with all 4 types of dropdowns. `Menu`, `Dialog`, `ModalBottomSheet`, & `bottomSheet`
+- `TShimmer` name changed from `~~TShimmerEffect~~`
+
 ## 2.0.10
 - `TAnimationLoader` `actionChild` Optional Child widget created for the actions at the bottom of animation.
 - `fullWidth` option added in the `TFormContainer`

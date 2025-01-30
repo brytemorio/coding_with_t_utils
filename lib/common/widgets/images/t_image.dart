@@ -157,7 +157,7 @@ class TImage extends StatelessWidget {
         color: overlayColor,
         width: width,
         height: height,
-        placeholder: (context, url) => TShimmerEffect(width: 56, height: 56, radius: borderRadius ?? 8.0),
+        placeholder: (context, url) => TShimmer(width: 56, height: 56, radius: borderRadius ?? 8.0),
         errorWidget: (context, url, error) => _errorImageWidget(),
       );
     } else {

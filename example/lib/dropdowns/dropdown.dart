@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:t_utils/common/widgets/dropdowns/searchable_dropdown.dart';
+import 'package:t_utils/t_utils.dart';
 
 class TDropdownExample extends StatelessWidget {
   const TDropdownExample({super.key});
@@ -10,7 +11,8 @@ class TDropdownExample extends StatelessWidget {
       spacing: 12,
       children: [
         TDropdown<String>(
-          labelText: "Select Country",
+          labelText: "Select Country: Menu",
+          popupStyle: DropdownPopupStyle.menu,
           items: (query, _) =>
               Future.value(['USA', 'Canada', 'India', 'Pakistan']),
           onChanged: (value) {
@@ -18,8 +20,9 @@ class TDropdownExample extends StatelessWidget {
           },
         ),
         TDropdown<String>(
-          labelText: "Search Country",
+          labelText: "Search Country: BottomSheet",
           showSearchBox: true,
+          popupStyle: DropdownPopupStyle.bottomSheet,
           items: (query, _) => Future.value(
               ['USA', 'Canada', 'India', 'Germany', 'Australia', 'Pakistan']),
           onChanged: (value) {
@@ -27,8 +30,8 @@ class TDropdownExample extends StatelessWidget {
           },
         ),
         TDropdown<String>(
-          labelText: "Select Color",
-          isBottomSheet: true,
+          labelText: "Select Color: Dialog",
+          popupStyle: DropdownPopupStyle.dialog,
           title: const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text("Select a Color",
@@ -41,8 +44,9 @@ class TDropdownExample extends StatelessWidget {
           },
         ),
         TDropdown<String>(
-          labelText: "Search City",
+          labelText: "Search City: Modal",
           showSearchBox: true,
+          popupStyle: DropdownPopupStyle.modal,
           noResultsText: "City not found!",
           items: (query, _) =>
               Future.value(['New York', 'Los Angeles', 'Chicago', 'Houston']),
