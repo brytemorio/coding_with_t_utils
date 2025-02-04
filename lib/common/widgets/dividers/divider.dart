@@ -34,8 +34,8 @@ class TDivider extends StatelessWidget {
     // Get the appropriate divider color depending on the theme (dark or light mode).
     final dividerColor = this.dividerColor ??
         (THelperFunctions.isDarkMode(context)
-            ? TColors.darkGrey
-            : TColors.grey);
+            ? TColors().darkGrey
+            : TColors().grey);
 
     // Use a default text style or allow the user to provide their own.
     final textStyle = this.textStyle ?? Theme.of(context).textTheme.labelMedium;

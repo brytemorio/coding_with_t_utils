@@ -70,10 +70,10 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     final bool isDarkMode = THelperFunctions.isDarkMode(context);
 
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes().defaultSpace),
       child: AppBar(
         backgroundColor: backgroundColor ??
-            (isDarkMode ? TColors.darkBackground : TColors.white),
+            (isDarkMode ? TColors().darkBackground : TColors().white),
         automaticallyImplyLeading:
             false, // Prevents default back arrow rendering.
         leading: showBackArrow
@@ -81,7 +81,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => Navigator.pop(context),
                 icon: Icon(
                   Iconsax.arrow_left,
-                  color: isDarkMode ? TColors.white : TColors.darkBackground,
+                  color: isDarkMode ? TColors().white : TColors().darkBackground,
                 ),
               )
             : leadingIcon != null
@@ -90,8 +90,8 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                     icon: Icon(
                       leadingIcon,
                       color: isDarkMode
-                          ? TColors.iconPrimaryLight
-                          : TColors.iconPrimaryDark,
+                          ? TColors().iconPrimaryLight
+                          : TColors().iconPrimaryDark,
                     ),
                   )
                 : null,
@@ -99,7 +99,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? DefaultTextStyle.merge(
                 style: titleStyle ??
                     TextStyle(
-                      color: isDarkMode ? TColors.white : TColors.textPrimary,
+                      color: isDarkMode ? TColors().white : TColors().textPrimary,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600,
                     ),

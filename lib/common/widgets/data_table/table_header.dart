@@ -64,8 +64,8 @@ class TTableHeader extends StatelessWidget {
 
         return Padding(
           padding: EdgeInsets.symmetric(
-              vertical: TSizes.spaceBtwItems,
-              horizontal: TSizes.spaceBtwItems / 2),
+              vertical: TSizes().spaceBtwItems,
+              horizontal: TSizes().spaceBtwItems / 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -104,7 +104,7 @@ class TTableHeader extends StatelessWidget {
                 ],
               ),
 
-              if (!isMobile) SizedBox(height: TSizes.spaceBtwItems),
+              if (!isMobile) SizedBox(height: TSizes().spaceBtwItems),
 
               // Search Bar
               TextFormField(
@@ -127,7 +127,7 @@ class TTableHeader extends StatelessWidget {
                   filled: true,
                   border: OutlineInputBorder(
                       borderRadius:
-                          BorderRadius.circular(TSizes.borderRadiusLg)),
+                          BorderRadius.circular(TSizes().borderRadiusLg)),
                 ),
               ),
             ],

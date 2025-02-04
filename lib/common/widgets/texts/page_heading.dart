@@ -24,10 +24,10 @@ class TPageHeading extends StatelessWidget {
         if (iconData != null)
           TIcon(
             icon: iconData!,
-            backgroundColor: TColors.primary,
-            color: TColors.white,
+            backgroundColor: TColors().primary,
+            color: TColors().white,
           ),
-        if (iconData != null) SizedBox(width: TSizes.spaceBtwItems),
+        if (iconData != null) SizedBox(width: TSizes().spaceBtwItems),
 
         // Show Heading Only
         if (subHeading == null) Text(heading, style: Theme.of(context).textTheme.headlineLarge),

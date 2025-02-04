@@ -40,7 +40,7 @@ class TCircularIconExample extends StatelessWidget {
         TIcon(
           color: Colors.black,
           icon: Icons.sailing_sharp,
-          borderRadius: TSizes.sm,
+          borderRadius: TSizes().sm,
           backgroundColor: Colors.green,
           onPressed: () {
             debugPrint('Settings icon pressed');

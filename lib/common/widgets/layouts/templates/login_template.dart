@@ -26,7 +26,7 @@ class TLoginTemplate extends StatelessWidget {
   /// Text to display in the footer, defaults to "Powered by Coding with T."
   final String footerText;
 
-  /// Background color for the login animation, defaults to TColors.primary.
+  /// Background color for the login animation, defaults to TColors().primary.
   final Color? animationBackgroundColor;
 
   /// Padding for the content area, can be customized.
@@ -46,7 +46,7 @@ class TLoginTemplate extends StatelessWidget {
         height: TDeviceUtils.getScreenHeight(context) * 0.8,
         child: TContainer(
           // Add rounded corners to the main container.
-          borderRadius: BorderRadius.circular(TSizes.borderRadiusLg),
+          borderRadius: BorderRadius.circular(TSizes().borderRadiusLg),
           padding: const EdgeInsets.all(0),
           child: Row(
             children: [
@@ -71,7 +71,7 @@ class TLoginTemplate extends StatelessWidget {
     return Container(
       padding: padding ??
           EdgeInsets.symmetric(
-            vertical: TSizes.defaultSpace * 2,
+            vertical: TSizes().defaultSpace * 2,
             horizontal: TDeviceUtils.getScreenWidth(context) * 0.1,
           ),
       margin: margin != null ? EdgeInsets.all(margin!) : null,
@@ -84,11 +84,11 @@ class TLoginTemplate extends StatelessWidget {
   TContainer _loginAnimationWidget(BuildContext context) {
     return TContainer(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(TSizes.borderRadiusLg),
-        bottomLeft: Radius.circular(TSizes.borderRadiusLg),
+        topLeft: Radius.circular(TSizes().borderRadiusLg),
+        bottomLeft: Radius.circular(TSizes().borderRadiusLg),
       ),
       padding: const EdgeInsets.all(0),
-      backgroundColor: animationBackgroundColor ?? TColors.primary,
+      backgroundColor: animationBackgroundColor ?? TColors().primary,
       child: SizedBox(
         height: TDeviceUtils.getScreenHeight(context),
         child: Stack(
@@ -114,11 +114,11 @@ class TLoginTemplate extends StatelessWidget {
   /// Reusable footer widget for displaying the footer text.
   Widget _buildFooterText(BuildContext context) {
     return Positioned(
-      bottom: TSizes.defaultSpace,
+      bottom: TSizes().defaultSpace,
       child: Text(
         footerText,
         style:
-            Theme.of(context).textTheme.bodyLarge!.apply(color: TColors.white),
+            Theme.of(context).textTheme.bodyLarge!.apply(color: TColors().white),
       ),
     );
   }

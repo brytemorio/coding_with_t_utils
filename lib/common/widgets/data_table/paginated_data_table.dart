@@ -77,7 +77,7 @@ class TPaginatedDataTable extends StatelessWidget {
           dividerThickness: 0,
           horizontalMargin: 12,
           rowsPerPage: rowsPerPage,
-          dataRowHeight: dataRowHeight ?? TSizes.xl * 2,
+          dataRowHeight: dataRowHeight ?? TSizes().xl * 2,
 
           /// CHECKBOX
           showCheckboxColumn: true,
@@ -101,11 +101,11 @@ class TPaginatedDataTable extends StatelessWidget {
 
           /// HEADER DESIGN
           headingTextStyle: Theme.of(context).textTheme.titleMedium,
-          headingRowColor: WidgetStateProperty.resolveWith((states) => TColors.lightBackground),
+          headingRowColor: WidgetStateProperty.resolveWith((states) => TColors().lightBackground),
           headingRowDecoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(TSizes.borderRadiusMd),
-              topRight: Radius.circular(TSizes.borderRadiusMd),
+              topLeft: Radius.circular(TSizes().borderRadiusMd),
+              topRight: Radius.circular(TSizes().borderRadiusMd),
             ),
           ),
 
@@ -123,9 +123,9 @@ class TPaginatedDataTable extends StatelessWidget {
           sortColumnIndex: sortColumnIndex,
           sortArrowBuilder: (bool ascending, bool sorted) {
             if (sorted) {
-              return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes.iconSm);
+              return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes().iconSm);
             } else {
-              return Icon(Iconsax.arrow_swap, size: TSizes.iconSm);
+              return Icon(Iconsax.arrow_swap, size: TSizes().iconSm);
             }
           },
         ),

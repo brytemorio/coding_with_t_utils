@@ -87,7 +87,7 @@ class TSliverAppBar extends StatelessWidget {
 
     return SliverAppBar(
       backgroundColor: backgroundColor ??
-          (isDarkMode ? TColors.darkBackground : TColors.lightBackground),
+          (isDarkMode ? TColors().darkBackground : TColors().lightBackground),
 
       // Disable automatic leading widget to customize the leading behavior
       automaticallyImplyLeading: false,
@@ -111,8 +111,8 @@ class TSliverAppBar extends StatelessWidget {
               icon: Icon(
                 Iconsax.arrow_left,
                 color: isDarkMode
-                    ? TColors.iconPrimaryDark
-                    : TColors.iconPrimaryLight,
+                    ? TColors().iconPrimaryDark
+                    : TColors().iconPrimaryLight,
               ),
             )
           : leadingIcon != null
@@ -124,7 +124,7 @@ class TSliverAppBar extends StatelessWidget {
           ? DefaultTextStyle.merge(
               style: titleStyle ??
                   TextStyle(
-                      color: isDarkMode ? TColors.white : TColors.textPrimary),
+                      color: isDarkMode ? TColors().white : TColors().textPrimary),
               child: title!,
             )
           : null,
@@ -141,8 +141,8 @@ class TSliverAppBar extends StatelessWidget {
                           style: titleStyle ??
                               TextStyle(
                                   color: isDarkMode
-                                      ? TColors.white
-                                      : TColors.textPrimary),
+                                      ? TColors().white
+                                      : TColors().textPrimary),
                           child: title!,
                         )
                       : null,
@@ -150,8 +150,8 @@ class TSliverAppBar extends StatelessWidget {
                   background: background ??
                       Container(
                           color: isDarkMode
-                              ? TColors.darkBackground
-                              : TColors.lightBackground),
+                              ? TColors().darkBackground
+                              : TColors().lightBackground),
                 )
               : null),
     );

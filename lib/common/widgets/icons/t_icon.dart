@@ -75,7 +75,7 @@ class TIcon extends StatelessWidget {
         icon: Icon(
           icon,
           color: color ?? Theme.of(context).primaryColor,
-          size: size ?? TSizes.md,
+          size: size ?? TSizes().md,
         ),
       ),
     );

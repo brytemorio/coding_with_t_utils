@@ -16,14 +16,14 @@ class TCountryCodePicker extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return Container(
       decoration: BoxDecoration(
-        color: dark ? TColors.darkContainer : TColors.accent,
-        borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
+        color: dark ? TColors().darkContainer : TColors().accent,
+        borderRadius: BorderRadius.circular(TSizes().inputFieldRadius),
       ),
       child: CountryCodePicker(
         onChanged: onChanged,
         // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
         initialSelection: 'ZA',
-        dialogBackgroundColor: dark ? TColors.darkBackground : TColors.white,
+        dialogBackgroundColor: dark ? TColors().darkBackground : TColors().white,
         searchDecoration: const InputDecoration(
             prefixIcon: Icon(Iconsax.search_normal),
             hintText: 'Search country'),

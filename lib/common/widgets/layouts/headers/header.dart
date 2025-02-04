@@ -81,10 +81,10 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: TColors.white,
-        border: Border(bottom: BorderSide(color: TColors.grey, width: 1)),
+        color: TColors().white,
+        border: Border(bottom: BorderSide(color: TColors().grey, width: 1)),
       ),
-      padding: EdgeInsets.symmetric(horizontal: TSizes.md, vertical: TSizes.sm),
+      padding: EdgeInsets.symmetric(horizontal: TSizes().md, vertical: TSizes().sm),
       child: TAppBar(
         leadingIcon: showMenu && !TDeviceUtils.isDesktopScreen(context) ? Iconsax.menu : leadingIcon,
         leadingOnPressed:
@@ -110,30 +110,30 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
             TIcon(
               onPressed: onOrderPressed,
               icon: Iconsax.box,
-              backgroundColor: TColors.primary.withValues(alpha: 0.1),
-              color: TColors.primary,
+              backgroundColor: TColors().primary.withValues(alpha: 0.1),
+              color: TColors().primary,
             ),
-          SizedBox(width: TSizes.spaceBtwItems / 2),
+          SizedBox(width: TSizes().spaceBtwItems / 2),
 
           // Conditionally show Notification icon
           if (showNotificationIcon)
             TIcon(
               onPressed: onNotificationPressed,
               icon: Iconsax.notification,
-              backgroundColor: TColors.primary.withValues(alpha: 0.1),
-              color: TColors.primary,
+              backgroundColor: TColors().primary.withValues(alpha: 0.1),
+              color: TColors().primary,
             ),
-          SizedBox(width: TSizes.spaceBtwItems / 2),
+          SizedBox(width: TSizes().spaceBtwItems / 2),
 
           // Conditionally show Settings icon
           if (showSettingsIcon)
             TIcon(
               onPressed: onSettingsPressed,
               icon: Iconsax.setting,
-              backgroundColor: TColors.primary.withValues(alpha: 0.1),
-              color: TColors.primary,
+              backgroundColor: TColors().primary.withValues(alpha: 0.1),
+              color: TColors().primary,
             ),
-          SizedBox(width: TSizes.spaceBtwItems / 2),
+          SizedBox(width: TSizes().spaceBtwItems / 2),
 
           // Profile section
           if (profileImage != null || profileName != null || profileEmail != null)
@@ -149,14 +149,14 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
                       imageType: ImageType.network,
                       image: profileImage!,
                     ),
-                  SizedBox(width: TSizes.sm),
+                  SizedBox(width: TSizes().sm),
                   // Display profile name and email if available
                   if (profileName != null && profileEmail != null)
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(profileName!, style: Theme.of(context).textTheme.titleLarge),
-                        SizedBox(height: TSizes.spaceBtwItems / 2),
+                        SizedBox(height: TSizes().spaceBtwItems / 2),
                         Text(profileEmail!, style: Theme.of(context).textTheme.labelMedium),
                       ],
                     ),

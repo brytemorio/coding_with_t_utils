@@ -26,10 +26,10 @@ class TTextWithIcon extends StatelessWidget {
       children: [
         TIcon(
           icon: icon,
-          color: color ?? TColors.primary,
-          backgroundColor: backgroundColor ?? TColors.lightBackground,
+          color: color ?? TColors().primary,
+          backgroundColor: backgroundColor ?? TColors().lightBackground,
         ),
-        SizedBox(width: TSizes.spaceBtwItems),
+        SizedBox(width: TSizes().spaceBtwItems),
         Expanded(
           child: DefaultTextStyle(
             maxLines: 1,

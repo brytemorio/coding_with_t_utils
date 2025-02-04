@@ -74,9 +74,9 @@ class TContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? Colors.white,
         borderRadius: circular
-            ? BorderRadius.circular(size != null ? size / 2 : TSizes.borderRadiusLg)
-            : borderRadius ?? BorderRadius.circular(radius ?? TSizes.borderRadiusLg),
-        border: showBorder ? border ?? Border.all(color: borderColor ?? TColors.borderPrimary) : null,
+            ? BorderRadius.circular(size != null ? size / 2 : TSizes().borderRadiusLg)
+            : borderRadius ?? BorderRadius.circular(radius ?? TSizes().borderRadiusLg),
+        border: showBorder ? border ?? Border.all(color: borderColor ?? TColors().borderPrimary) : null,
         boxShadow: showShadow
             ? [
                 shadow ??
@@ -94,18 +94,18 @@ class TContainer extends StatelessWidget {
               ? Material(
                   color: Colors.transparent,
                   borderRadius: circular
-                      ? BorderRadius.circular(size != null ? size / 2 : TSizes.borderRadiusLg)
-                      : borderRadius ?? BorderRadius.circular(radius ?? TSizes.borderRadiusLg),
+                      ? BorderRadius.circular(size != null ? size / 2 : TSizes().borderRadiusLg)
+                      : borderRadius ?? BorderRadius.circular(radius ?? TSizes().borderRadiusLg),
                   child: InkWell(
                     borderRadius: circular
-                        ? BorderRadius.circular(size != null ? size / 2 : TSizes.borderRadiusLg)
-                        : borderRadius ?? BorderRadius.circular(radius ?? TSizes.borderRadiusLg),
+                        ? BorderRadius.circular(size != null ? size / 2 : TSizes().borderRadiusLg)
+                        : borderRadius ?? BorderRadius.circular(radius ?? TSizes().borderRadiusLg),
                     splashColor: backgroundColor?.withValues(alpha: 0.2) ?? Colors.grey.withValues(alpha: 0.2),
                     highlightColor: backgroundColor?.withValues(alpha: 0.1) ?? Colors.grey.withValues(alpha: 0.1),
                     onTap: onTap,
                     child: Container(
                       margin: margin,
-                      padding: padding ?? EdgeInsets.all(TSizes.md),
+                      padding: padding ?? EdgeInsets.all(TSizes().md),
                       child: child,
                     ),
                   ),
@@ -114,13 +114,13 @@ class TContainer extends StatelessWidget {
                   onTap: onTap,
                   child: Container(
                     margin: margin,
-                    padding: padding ?? EdgeInsets.all(TSizes.md),
+                    padding: padding ?? EdgeInsets.all(TSizes().md),
                     child: child,
                   ),
                 )
           : Container(
               margin: margin,
-              padding: padding ?? EdgeInsets.all(TSizes.md),
+              padding: padding ?? EdgeInsets.all(TSizes().md),
               child: child,
             ),
     );

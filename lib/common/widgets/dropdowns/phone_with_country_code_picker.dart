@@ -23,7 +23,7 @@ class TPhoneWithCountryCodePicker extends StatelessWidget {
     return Row(
       children: [
         TCountryCodePicker(onChanged: countryCodeOnChanged),
-        SizedBox(width: TSizes.spaceBtwItems / 2),
+        SizedBox(width: TSizes().spaceBtwItems / 2),
         Expanded(
           child: TextFormField(
             controller: phoneController,

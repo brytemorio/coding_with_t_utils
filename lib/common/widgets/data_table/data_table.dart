@@ -109,11 +109,11 @@ class TDataTable extends StatelessWidget {
 
                         /// HEADER DESIGN
                         headingTextStyle: Theme.of(context).textTheme.titleMedium,
-                        headingRowColor: WidgetStateProperty.resolveWith((states) => TColors.lightBackground),
+                        headingRowColor: WidgetStateProperty.resolveWith((states) => TColors().lightBackground),
                         headingRowDecoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(TSizes.borderRadiusMd),
-                            topRight: Radius.circular(TSizes.borderRadiusMd),
+                            topLeft: Radius.circular(TSizes().borderRadiusMd),
+                            topRight: Radius.circular(TSizes().borderRadiusMd),
                           ),
                         ),
                         empty: emptyWidget ??
@@ -129,9 +129,9 @@ class TDataTable extends StatelessWidget {
                         sortColumnIndex: sortColumnIndex,
                         sortArrowBuilder: (bool ascending, bool sorted) {
                           if (sorted) {
-                            return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes.iconSm);
+                            return Icon(ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down, size: TSizes().iconSm);
                           } else {
-                            return Icon(Iconsax.arrow_swap, size: TSizes.iconSm);
+                            return Icon(Iconsax.arrow_swap, size: TSizes().iconSm);
                           }
                         },
                       ),
@@ -146,7 +146,7 @@ class TDataTable extends StatelessWidget {
                   ],
                 ),
         ),
-        if (!hideLoadMore) SizedBox(height: TSizes.spaceBtwSections),
+        if (!hideLoadMore) SizedBox(height: TSizes().spaceBtwSections),
 
         /// LOAD MORE
         if (!hideLoadMore) loadMoreButton(),
@@ -168,7 +168,7 @@ class TDataTable extends StatelessWidget {
         : Column(
             children: [
               Text('Showing ${rows.length} Row(s)', style: Theme.of(context).textTheme.bodySmall),
-              SizedBox(height: TSizes.spaceBtwItems),
+              SizedBox(height: TSizes().spaceBtwItems),
               if (allItemsFetched)
                 Text(
                   'You\'re seeing all the records that match your filters!',

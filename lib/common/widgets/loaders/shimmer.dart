@@ -26,7 +26,7 @@ class TShimmer extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: color ?? (dark ? TColors.darkerGrey : TColors.white),
+          color: color ?? (dark ? TColors().darkerGrey : TColors().white),
           borderRadius: BorderRadius.circular(radius),
         ),
       ),

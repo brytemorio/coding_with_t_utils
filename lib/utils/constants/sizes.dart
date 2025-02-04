@@ -1,80 +1,86 @@
 class TSizes {
+  static final TSizes _instance = TSizes._internal();
+
+  factory TSizes() => _instance;
+
+  TSizes._internal();
+
   // Padding and margin sizes
-  static double xs = 4.0;
-  static double sm = 8.0;
-  static double md = 16.0;
-  static double lg = 24.0;
-  static double xl = 32.0;
+  double xs = 4.0;
+  double sm = 8.0;
+  double md = 16.0;
+  double lg = 24.0;
+  double xl = 32.0;
 
   // Icon sizes
-  static double iconXs = 12.0;
-  static double iconSm = 16.0;
-  static double iconMd = 24.0;
-  static double iconLg = 32.0;
+  double iconXs = 12.0;
+  double iconSm = 16.0;
+  double iconMd = 24.0;
+  double iconLg = 32.0;
 
   // Font sizes
-  static double fontSizeSm = 14.0;
-  static double fontSizeMd = 16.0;
-  static double fontSizeLg = 18.0;
+  double fontSizeSm = 14.0;
+  double fontSizeMd = 16.0;
+  double fontSizeLg = 18.0;
 
   // Button sizes
-  static double buttonHeight = 20.0;
-  static double buttonRadius = 60.0;
-  static double buttonWidth = 120.0;
-  static double buttonElevation = 4.0;
+  double buttonHeight = 20.0;
+  double buttonRadius = 60.0;
+  double buttonWidth = 120.0;
+  double buttonElevation = 4.0;
 
   // AppBar height
-  static double appBarHeight = 56.0;
+  double appBarHeight = 56.0;
 
   // Image sizes
-  static double imageThumbSize = 80.0;
+  double imageThumbSize = 80.0;
 
   // Default spacing between sections
-  static double defaultSpace = 16.0;
-  static double spaceBtwItems = 12.0;
-  static double spaceBtwSections = 32.0;
+  double defaultSpace = 16.0;
+  double spaceBtwItems = 12.0;
+  double spaceBtwSections = 32.0;
 
   // Border radius
-  static double borderRadiusSm = 4.0;
-  static double borderRadiusMd = 8.0;
-  static double borderRadiusLg = 12.0;
+  double borderRadiusSm = 4.0;
+  double borderRadiusMd = 8.0;
+  double borderRadiusLg = 12.0;
 
   // Divider height
-  static double dividerHeight = 1.0;
+  double dividerHeight = 1.0;
 
   // Product item dimensions
-  static double productImageSize = 120.0;
-  static double productImageRadius = 16.0;
-  static double productItemHeight = 160.0;
+  double productImageSize = 120.0;
+  double productImageRadius = 16.0;
+  double productItemHeight = 160.0;
 
   // Input field
-  static double inputFieldRadius = 16.0;
-  static double spaceBtwInputFields = 16.0;
+  double inputFieldRadius = 16.0;
+  double spaceBtwInputFields = 16.0;
 
   // Card sizes
-  static double cardRadiusLg = 16.0;
-  static double cardRadiusMd = 12.0;
-  static double cardRadiusSm = 10.0;
-  static double cardRadiusXs = 6.0;
-  static double cardElevation = 2.0;
+  double cardRadiusLg = 16.0;
+  double cardRadiusMd = 12.0;
+  double cardRadiusSm = 10.0;
+  double cardRadiusXs = 6.0;
+  double cardElevation = 2.0;
 
   // Image carousel height
-  static double imageCarouselHeight = 200.0;
+  double imageCarouselHeight = 200.0;
 
   // Loading indicator size
-  static double loadingIndicatorSize = 36.0;
+  double loadingIndicatorSize = 36.0;
 
   // Grid view spacing
-  static double gridViewSpacing = 16.0;
+  double gridViewSpacing = 16.0;
 
   // Responsive Screen Sizes
-  static const int desktopScreenSize = 1366;
-  static const int tabletScreenSize = 768;
-  static const int mobileScreenSize = 360;
-  static const int customScreenSize = 1100;
+  int desktopScreenSize = 1366;
+  int tabletScreenSize = 768;
+  int mobileScreenSize = 360;
+  int customScreenSize = 1100;
 
   // Optional initializer to override default sizes
-  static void init({
+  void init({
     double? xsSize,
     double? smSize,
     double? mdSize,
@@ -113,6 +119,10 @@ class TSizes {
     double? imageCarouselHeightValue,
     double? loadingIndicatorSizeValue,
     double? gridViewSpacingValue,
+    int? desktopScreenSizeValue,
+    int? tabletScreenSizeValue,
+    int? mobileScreenSizeValue,
+    int? customScreenSizeValue,
   }) {
     // Padding and margin sizes
     xs = xsSize ?? xs;
@@ -181,5 +191,11 @@ class TSizes {
 
     // Grid view spacing
     gridViewSpacing = gridViewSpacingValue ?? gridViewSpacing;
+
+    // Responsive Sizes
+    desktopScreenSize = desktopScreenSizeValue ?? desktopScreenSize;
+    tabletScreenSize = tabletScreenSizeValue ?? tabletScreenSize;
+    mobileScreenSize = mobileScreenSizeValue ?? mobileScreenSize;
+    customScreenSize = customScreenSizeValue ?? customScreenSize;
   }
 }

@@ -78,7 +78,7 @@ class TImageUploader extends StatelessWidget {
           height: height,
           imageType: imageType,
           memoryImage: memoryImage,
-          backgroundColor: TColors.lightBackground,
+          backgroundColor: TColors().lightBackground,
           imageShape: circular ? BoxShape.circle : BoxShape.rectangle,
         ),
         // Display the edit icon button on top of the image
@@ -90,19 +90,19 @@ class TImageUploader extends StatelessWidget {
           child: loading
               ? TContainer(
                   circular: true,
-                  width: TSizes.xl,
-                  height: TSizes.xl,
+                  width: TSizes().xl,
+                  height: TSizes().xl,
                   child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      backgroundColor: TColors.primary,
+                      backgroundColor: TColors().primary,
                       color: Colors.white),
                 )
               : TIcon(
                   icon: icon,
-                  size: TSizes.md,
+                  size: TSizes().md,
                   color: Colors.white,
                   onPressed: onIconButtonPressed,
-                  backgroundColor: TColors.primary.withValues(alpha: 0.9),
+                  backgroundColor: TColors().primary.withValues(alpha: 0.9),
                 ),
         )
       ],

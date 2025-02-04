@@ -35,7 +35,7 @@ class TDialogs {
         return PopScope(
           canPop: canPop,
           child: AlertDialog(
-            backgroundColor: TColors.lightBackground,
+            backgroundColor: TColors().lightBackground,
             title: TTextWithIcon(text: title, icon: Iconsax.box),
             content: content ??
                 Text(

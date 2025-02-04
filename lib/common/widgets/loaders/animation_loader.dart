@@ -82,7 +82,7 @@ class TAnimationLoader extends StatelessWidget {
               ? Lottie.asset(animation!, height: height, width: width, fit: BoxFit.contain)
               : Image(
                   image: AssetImage(animation ?? 'packages/t_utils/assets/riding.gif'), height: height, width: width, fit: BoxFit.contain),
-          SizedBox(height: TSizes.defaultSpace),
+          SizedBox(height: TSizes().defaultSpace),
 
           // Display the optional text message below the animation.
           DefaultTextStyle(
@@ -90,7 +90,7 @@ class TAnimationLoader extends StatelessWidget {
             textAlign: TextAlign.center,
             child: message ?? Text('Loading your data...'),
           ),
-          SizedBox(height: TSizes.defaultSpace),
+          SizedBox(height: TSizes().defaultSpace),
 
           // Show the action button if enabled.
           if (showAction)
@@ -99,7 +99,7 @@ class TAnimationLoader extends StatelessWidget {
                   onPressed: onActionPressed,
                   child: Text(
                     actionText ?? 'Action',
-                    style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.lightBackground),
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors().lightBackground),
                   ),
                 ),
         ],

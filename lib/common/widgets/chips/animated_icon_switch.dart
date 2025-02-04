@@ -127,7 +127,7 @@ class TIconToggleSwitch<T> extends StatelessWidget {
         return Icon(
           icons[index],
           color: t == current
-              ? activeColor ?? TColors.primary
+              ? activeColor ?? TColors().primary
               : inactiveColor ?? Colors.grey,
           size: iconSize,
         );
@@ -138,7 +138,7 @@ class TIconToggleSwitch<T> extends StatelessWidget {
           (value) => ToggleStyle(
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
-                indicatorColor: activeColor ?? TColors.primary.withValues(alpha: 0.1),
+                indicatorColor: activeColor ?? TColors().primary.withValues(alpha: 0.1),
                 indicatorBorderRadius: BorderRadius.circular(100),
                 boxShadow: boxShadow,
               ),

@@ -15,7 +15,7 @@ class CustomAppBarExampleScreen extends StatelessWidget {
         titleStyle: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: TColors.textPrimary),
+            color: TColors().textPrimary),
 
         // Enables the back arrow & when this is true, [leadingIcon & leadingOnPressed] will not work
         showBackArrow: true,
@@ -32,7 +32,7 @@ class CustomAppBarExampleScreen extends StatelessWidget {
         // Action widgets on the right
         actions: [
           IconButton(
-            icon: Icon(Icons.search, color: TColors.iconPrimaryLight),
+            icon: Icon(Icons.search, color: TColors().iconPrimaryLight),
             onPressed: () {
               // Handle search action
               ScaffoldMessenger.of(context).showSnackBar(
@@ -40,7 +40,7 @@ class CustomAppBarExampleScreen extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(Icons.more_vert, color: TColors.iconPrimaryLight),
+            icon: Icon(Icons.more_vert, color: TColors().iconPrimaryLight),
             onPressed: () {
               // Handle more options action
               ScaffoldMessenger.of(context).showSnackBar(

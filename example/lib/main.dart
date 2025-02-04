@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Utils Example',
       themeMode: ThemeMode.dark,
-      theme: ThemeData(scaffoldBackgroundColor: TColors.lightBackground),
+      theme: ThemeData(scaffoldBackgroundColor: TColors().lightBackground),
       home: const MyHomePage(),
     );
   }
@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace * 2),
+          padding: EdgeInsets.all(TSizes().defaultSpace * 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

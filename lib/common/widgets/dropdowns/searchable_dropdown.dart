@@ -110,7 +110,7 @@ class TDropdown<T> extends StatelessWidget {
       validator: validator,
       itemAsString: itemAsString,
       filterFn: filterFn,
-      compareFn: compareFn,
+      compareFn: compareFn ?? (item1, item2) => item1 == item2,
       onChanged: onChanged,
       decoratorProps: DropDownDecoratorProps(
         decoration: InputDecoration(
@@ -153,7 +153,7 @@ class TDropdown<T> extends StatelessWidget {
       bottomSheetProps: BottomSheetProps(
         enableDrag: true,
         showDragHandle: true,
-        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkBackground : Colors.white,
+        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors().darkBackground : Colors.white,
       ),
       searchDelay: searchDelay ?? Duration.zero,
       searchFieldProps: _searchFieldProps(),
@@ -167,7 +167,7 @@ class TDropdown<T> extends StatelessWidget {
       showSearchBox: showSearchBox,
       searchDelay: searchDelay ?? Duration.zero,
       menuProps: MenuProps(
-        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkBackground : Colors.white,
+        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors().darkBackground : Colors.white,
       ),
       searchFieldProps: _searchFieldProps(),
       emptyBuilder: (context, searchEntry) => Center(child: Text(noResultsText)),
@@ -181,8 +181,8 @@ class TDropdown<T> extends StatelessWidget {
       showSearchBox: showSearchBox,
       searchDelay: searchDelay ?? Duration.zero,
       dialogProps: DialogProps(
-        contentPadding: EdgeInsets.all(TSizes.md),
-        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkBackground : Colors.white,
+        contentPadding: EdgeInsets.all(TSizes().md),
+        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors().darkBackground : Colors.white,
       ),
       searchFieldProps: _searchFieldProps(),
       emptyBuilder: (context, searchEntry) => Center(child: Text(noResultsText)),
@@ -196,10 +196,10 @@ class TDropdown<T> extends StatelessWidget {
       showSearchBox: showSearchBox,
       searchDelay: searchDelay ?? Duration.zero,
       modalBottomSheetProps: ModalBottomSheetProps(
-        padding: EdgeInsets.all(TSizes.md),
+        padding: EdgeInsets.all(TSizes().md),
         enableDrag: true,
         showDragHandle: true,
-        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkBackground : Colors.white,
+        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors().darkBackground : Colors.white,
       ),
       searchFieldProps: _searchFieldProps(),
       emptyBuilder: (context, searchEntry) => Center(child: Text(noResultsText)),

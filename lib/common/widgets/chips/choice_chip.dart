@@ -46,7 +46,7 @@ class TChoiceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final labelTextStyle = TextStyle(
         color: selected
-            ? selectedTextColor ?? TColors.white
+            ? selectedTextColor ?? TColors().white
             : unselectedTextColor);
 
     return Theme(
@@ -92,7 +92,7 @@ class TChoiceChip extends StatelessWidget {
         selectedColor: (isColorAttribute
             ? THelperFunctions.restoreColorFromValue(text)
                 .withValues(alpha: 0.2)
-            : backgroundColor ?? TColors.primary),
+            : backgroundColor ?? TColors().primary),
       ),
     );
   }

@@ -78,12 +78,12 @@ class TFormContainer extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: padding ?? EdgeInsets.all(TSizes.md),
+      padding: padding ?? EdgeInsets.all(TSizes().md),
       constraints: maxWidth != null ? BoxConstraints(maxWidth: maxWidth!) : null,
       decoration: BoxDecoration(
-        color: backgroundColor ?? TColors.white,
-        borderRadius: BorderRadius.circular(radius ?? TSizes.cardRadiusLg),
-        border: showBorder ? border ?? Border.all(color: borderColor ?? TColors.borderPrimary) : null,
+        color: backgroundColor ?? TColors().white,
+        borderRadius: BorderRadius.circular(radius ?? TSizes().cardRadiusLg),
+        border: showBorder ? border ?? Border.all(color: borderColor ?? TColors().borderPrimary) : null,
         boxShadow: showShadow
             ? [
                 shadow ??
@@ -101,8 +101,8 @@ class TFormContainer extends StatelessWidget {
         children: [
           if (isLoading)
             Padding(
-              padding: EdgeInsets.only(bottom: TSizes.sm),
-              child: LinearProgressIndicator(color: loadingIndicatorColor ?? TColors.primary, minHeight: 2),
+              padding: EdgeInsets.only(bottom: TSizes().sm),
+              child: LinearProgressIndicator(color: loadingIndicatorColor ?? TColors().primary, minHeight: 2),
             ),
           child ?? const SizedBox.shrink(),
         ],
