@@ -80,7 +80,7 @@ class TSizes {
   int customScreenSize = 1100;
 
   // Optional initializer to override default sizes
-  void init({
+  TSizes init({
     double? xsSize,
     double? smSize,
     double? mdSize,
@@ -197,5 +197,7 @@ class TSizes {
     tabletScreenSize = tabletScreenSizeValue ?? tabletScreenSize;
     mobileScreenSize = mobileScreenSizeValue ?? mobileScreenSize;
     customScreenSize = customScreenSizeValue ?? customScreenSize;
+
+    return this;
   }
 }

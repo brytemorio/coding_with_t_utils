@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.1
+- `TSizes` and `TColors` are now having init method with return type TColors.
+
 ## 2.1.0
 - `TSizes` and `TColors` are now having singleton pattern.
 

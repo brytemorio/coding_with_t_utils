@@ -71,7 +71,7 @@ class TColors {
   Color white = const Color(0xFFFFFFFF);
 
   // Optional initializer: users can set only the colors they want to override
-  void init({
+  TColors init({
     Color? primaryColor,
     Color? secondaryColor,
     Color? accentColor,
@@ -144,5 +144,7 @@ class TColors {
     softGrey = softGreyColor ?? softGrey;
     lightGrey = lightGreyColor ?? lightGrey;
     white = whiteColor ?? white;
+
+    return this;
   }
 }
