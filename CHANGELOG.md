@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2
+- `TTextWithIcon` BG Color Updated
+- `TAdminHeader` Modified with new default user image, `loading` variable introduced
+
 ## 2.1.1
 - `TSizes` and `TColors` are now having init method with return type TColors.
 

@@ -27,7 +27,7 @@ class TTextWithIcon extends StatelessWidget {
         TIcon(
           icon: icon,
           color: color ?? TColors().primary,
-          backgroundColor: backgroundColor ?? TColors().lightBackground,
+          backgroundColor: backgroundColor ?? color?.withValues(alpha: 0.1) ?? TColors().lightBackground,
         ),
         SizedBox(width: TSizes().spaceBtwItems),
         Expanded(

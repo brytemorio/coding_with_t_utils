@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_utils/common/widgets/exports.dart';
 
 import '../../../../utils/exports.dart';
-import '../../appbar/appbar.dart';
-import '../../icons/t_icon.dart';
-import '../../images/t_image.dart';
 
 /// A flexible and customizable header widget for use across various screens.
 ///
@@ -19,11 +16,13 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
     this.leadingOnPressed,
     this.actions = const [],
     this.profileImage,
+    this.imageType,
     this.profileName,
     this.profileEmail,
-    this.profileRoute,
+    this.profileOnTap,
     this.showSearch = true,
     this.showMenu = true,
+    this.loading = false,
     this.searchHint = 'Search anything...',
     this.showOrderIcon = true,
     this.showNotificationIcon = true,
@@ -47,6 +46,9 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget> actions;
 
   /// Profile image URL (optional) to display in the header.
+  final ImageType? imageType;
+
+  /// Profile image URL (optional) to display in the header.
   final String? profileImage;
 
   /// Profile name (optional) to display in the header.
@@ -56,13 +58,16 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
   final String? profileEmail;
 
   /// Route to navigate to when the profile is tapped.
-  final String? profileRoute;
+  final void Function()? profileOnTap;
 
   /// Flag to enable or disable the search bar.
   final bool showSearch;
 
   /// Flag to enable or disable the menu button on mobile.
   final bool showMenu;
+
+  /// Flag to enable or disable the loader.
+  final bool loading;
 
   /// Hint text for the search bar.
   final String searchHint;
@@ -136,33 +141,30 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(width: TSizes().spaceBtwItems / 2),
 
           // Profile section
-          if (profileImage != null || profileName != null || profileEmail != null)
-            InkWell(
-              onTap: profileRoute != null ? () => Get.toNamed(profileRoute!) : null,
-              child: Row(
-                children: [
-                  // Display profile image if available
-                  if (profileImage != null)
-                    TImage(
-                      width: 40,
-                      height: 40,
-                      imageType: ImageType.network,
-                      image: profileImage!,
-                    ),
-                  SizedBox(width: TSizes().sm),
-                  // Display profile name and email if available
-                  if (profileName != null && profileEmail != null)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(profileName!, style: Theme.of(context).textTheme.titleLarge),
-                        SizedBox(height: TSizes().spaceBtwItems / 2),
-                        Text(profileEmail!, style: Theme.of(context).textTheme.labelMedium),
-                      ],
-                    ),
-                ],
-              ),
+          InkWell(
+            child: Row(
+              children: [
+                TImage(
+                  width: 40,
+                  height: 40,
+                  imageType: imageType ?? (profileImage != null ? ImageType.network : ImageType.asset),
+                  image: profileImage ?? 'packages/t_utils/assets/user.png',
+                ),
+                SizedBox(width: TSizes().sm),
+                // Display profile name and email if available
+                Column(
+                  spacing: TSizes().spaceBtwItems / 2,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (loading) const TShimmer(width: 50, height: 11),
+                    if (loading) const TShimmer(width: 140, height: 11),
+                    if (!loading) Text(profileName ?? '', style: Theme.of(context).textTheme.titleLarge),
+                    if (!loading) Text(profileEmail ?? '', style: Theme.of(context).textTheme.labelMedium),
+                  ],
+                ),
+              ],
             ),
+          ),
         ],
       ),
     );
