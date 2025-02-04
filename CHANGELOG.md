@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.0
+- `TSizes` and `TColors` are now having singleton pattern.
+
 ## 2.0.11
 - `TDropdown` Widget finalized with all 4 types of dropdowns. `Menu`, `Dialog`, `ModalBottomSheet`, & `bottomSheet`
 - `TShimmer` name changed from `~~TShimmerEffect~~`
