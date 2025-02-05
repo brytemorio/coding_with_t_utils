@@ -25,7 +25,7 @@ class TSizes {
 
   // Button sizes
   double buttonHeight = 20.0;
-  double buttonRadius = 60.0;
+  double buttonRadius = 8.0;
   double buttonWidth = 120.0;
   double buttonElevation = 4.0;
 
@@ -54,7 +54,7 @@ class TSizes {
   double productItemHeight = 160.0;
 
   // Input field
-  double inputFieldRadius = 16.0;
+  double inputFieldRadius = 8.0;
   double spaceBtwInputFields = 16.0;
 
   // Card sizes

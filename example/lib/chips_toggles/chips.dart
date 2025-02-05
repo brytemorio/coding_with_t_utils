@@ -11,7 +11,14 @@ class TChipsExample extends StatelessWidget {
       runSpacing: 12,
       children: [
         TChoiceChip(
-          text: "Option A",
+          text: "Default",
+          selected: false,
+          onSelected: (isSelected) {
+            // Handle selection
+          },
+        ),
+        TChoiceChip(
+          text: "Default selected",
           selected: true,
           onSelected: (isSelected) {
             // Handle selection

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.3
+- **Appbar** `leading` widget and `leadingIconColor` added
+- **TTextEditor** Modified and added toolbar color `toolbarColor`
+- **TChoiceChip** empty icon taking space fixed,
+- **TTableActionIconButtons** default space added `spacing: TSizes().sm`
+
 ## 2.1.2
 - `TTextWithIcon` BG Color Updated
 - `TAdminHeader` Modified with new default user image, `loading` variable introduced

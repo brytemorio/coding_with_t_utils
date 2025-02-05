@@ -30,8 +30,12 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// Determines if a back arrow is shown on the leading side of the AppBar.
   final bool showBackArrow;
 
+  /// A custom widget as a leading widget.
+  final Widget? leading;
+
   /// A custom icon to replace the default back arrow.
   final IconData? leadingIcon;
+  final Color? leadingIconColor;
 
   /// Callback for the leading icon's press event.
   final VoidCallback? leadingOnPressed;
@@ -57,7 +61,9 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.titleStyle,
     this.actions,
+    this.leading,
     this.leadingIcon,
+    this.leadingIconColor,
     this.leadingOnPressed,
     this.showBackArrow = false,
     this.padding,
@@ -72,10 +78,9 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes().defaultSpace),
       child: AppBar(
-        backgroundColor: backgroundColor ??
-            (isDarkMode ? TColors().darkBackground : TColors().white),
-        automaticallyImplyLeading:
-            false, // Prevents default back arrow rendering.
+        backgroundColor: backgroundColor ?? (isDarkMode ? TColors().darkBackground : TColors().white),
+        automaticallyImplyLeading: false,
+        // Prevents default back arrow rendering.
         leading: showBackArrow
             ? IconButton(
                 onPressed: () => Navigator.pop(context),
@@ -84,17 +89,16 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                   color: isDarkMode ? TColors().white : TColors().darkBackground,
                 ),
               )
-            : leadingIcon != null
-                ? IconButton(
-                    onPressed: leadingOnPressed,
-                    icon: Icon(
-                      leadingIcon,
-                      color: isDarkMode
-                          ? TColors().iconPrimaryLight
-                          : TColors().iconPrimaryDark,
-                    ),
-                  )
-                : null,
+            : leading ??
+                (leadingIcon != null
+                    ? IconButton(
+                        onPressed: leadingOnPressed,
+                        icon: Icon(
+                          leadingIcon,
+                          color: leadingIconColor ?? (isDarkMode ? TColors().iconPrimaryLight : TColors().iconPrimaryDark),
+                        ),
+                      )
+                    : null),
         title: title != null
             ? DefaultTextStyle.merge(
                 style: titleStyle ??

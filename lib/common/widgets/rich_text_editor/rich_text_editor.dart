@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
+import 'package:t_utils/t_utils.dart';
 
 import 'editor_controller.dart';
 
@@ -21,6 +22,9 @@ class TTextEditor extends StatefulWidget {
   final bool showHeading;
   final bool showFontFamily;
   final bool showListOptions;
+
+  /// Whether to display the toolbar in multiple rows.
+  final Color? toolbarColor;
 
   /// Whether to display the toolbar in multiple rows.
   final bool toolbarMultiRow;
@@ -67,10 +71,11 @@ class TTextEditor extends StatefulWidget {
     this.showHeading = true,
     this.showFontFamily = false,
     this.showListOptions = true,
-    this.toolbarMultiRow = false,
+    this.toolbarMultiRow = true,
     this.editorHeight = 300,
     this.label = 'Text Editor',
     this.editorPadding = const EdgeInsets.all(8.0),
+    this.toolbarColor,
     this.borderColor = Colors.grey,
     this.borderRadius = 8.0,
     this.placeholder = 'Start typing...',
@@ -115,6 +120,7 @@ class _TTextEditorState extends State<TTextEditor> {
         if (!widget.isReadOnly)
           quill.QuillToolbar.simple(
             configurations: quill.QuillSimpleToolbarConfigurations(
+              color: widget.toolbarColor ?? Colors.transparent,
               multiRowsDisplay: widget.toolbarMultiRow,
               showBoldButton: widget.showBold,
               showItalicButton: widget.showItalic,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_utils/common/widgets/exports.dart';
+import 'package:t_utils/t_utils.dart';
 
 class TTableActionButtons extends StatelessWidget {
   /// Widget for displaying action buttons for table rows
@@ -47,6 +48,7 @@ class TTableActionButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: TSizes().sm,
       children: [
         if (view)
           _buildIconButton(
