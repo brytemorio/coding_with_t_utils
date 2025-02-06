@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.4
+- Small Adjustment Modifications
+
 ## 2.1.3
 - **Appbar** `leading` widget and `leadingIconColor` added
 - **TTextEditor** Modified and added toolbar color `toolbarColor`

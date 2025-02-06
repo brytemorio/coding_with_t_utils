@@ -141,8 +141,12 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(width: TSizes().spaceBtwItems / 2),
 
           // Profile section
-          InkWell(
+          TContainer(
+            showRipple: true,
+            onTap: profileOnTap,
+            padding: EdgeInsets.all(TSizes().sm),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TImage(
                   width: 40,
@@ -153,6 +157,7 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
                 SizedBox(width: TSizes().sm),
                 // Display profile name and email if available
                 Column(
+                  mainAxisSize: MainAxisSize.min,
                   spacing: TSizes().spaceBtwItems / 2,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

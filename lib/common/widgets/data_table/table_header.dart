@@ -16,8 +16,12 @@ class TTableHeader extends StatelessWidget {
     this.actions = const [],
     this.filters = const [],
     this.onSort,
+    this.onPrintTable,
+    this.onDownloadCSV,
     this.sortLabel,
     this.showSortButton = false,
+    this.showDownloadCSVButton = true,
+    this.showPrintTableButton = true,
   });
 
   /// Text for the "Create" button.
@@ -49,12 +53,16 @@ class TTableHeader extends StatelessWidget {
 
   /// Callback for sorting functionality.
   final VoidCallback? onSort;
+  final VoidCallback? onDownloadCSV;
+  final VoidCallback? onPrintTable;
 
   /// Label for the sorting column.
   final String? sortLabel;
 
   /// Whether to show the sorting button.
   final bool showSortButton;
+  final bool showDownloadCSVButton;
+  final bool showPrintTableButton;
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +104,18 @@ class TTableHeader extends StatelessWidget {
                           icon: const Icon(Icons.sort),
                           label: Text(sortLabel ?? 'Sort'),
                         ),
+
+                      if (showDownloadCSVButton)
+                      IconButton(
+                        icon: const Icon(Icons.download),
+                        onPressed: onDownloadCSV,
+                      ),
+
+                      if (showPrintTableButton)
+                      IconButton(
+                        icon: const Icon(Icons.print),
+                        onPressed: onPrintTable,
+                      ),
 
                       // Additional Actions
                       ...actions,
