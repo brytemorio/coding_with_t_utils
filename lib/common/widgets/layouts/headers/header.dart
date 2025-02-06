@@ -144,7 +144,7 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
           TContainer(
             showRipple: true,
             onTap: profileOnTap,
-            padding: EdgeInsets.all(TSizes().sm),
+            padding: EdgeInsets.symmetric(horizontal: TSizes().sm, vertical: TSizes().xs),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
