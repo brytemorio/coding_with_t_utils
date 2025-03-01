@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.5
+- `Header` abd `Appbar` Mobile version fixed
+- `Dialogs` length issue resolved
+
+
 ## 2.1.4
 - Small Adjustment Modifications
 

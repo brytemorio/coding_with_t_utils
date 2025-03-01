@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_utils/common/widgets/exports.dart';
 import 'package:t_utils/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -76,42 +77,36 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     final bool isDarkMode = THelperFunctions.isDarkMode(context);
 
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes().defaultSpace),
-      child: AppBar(
-        backgroundColor: backgroundColor ?? (isDarkMode ? TColors().darkBackground : TColors().white),
-        automaticallyImplyLeading: false,
-        // Prevents default back arrow rendering.
-        leading: showBackArrow
-            ? IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Iconsax.arrow_left,
-                  color: isDarkMode ? TColors().white : TColors().darkBackground,
-                ),
-              )
-            : leading ??
-                (leadingIcon != null
-                    ? IconButton(
-                        onPressed: leadingOnPressed,
-                        icon: Icon(
-                          leadingIcon,
-                          color: leadingIconColor ?? (isDarkMode ? TColors().iconPrimaryLight : TColors().iconPrimaryDark),
-                        ),
-                      )
-                    : null),
-        title: title != null
-            ? DefaultTextStyle.merge(
-                style: titleStyle ??
-                    TextStyle(
-                      color: isDarkMode ? TColors().white : TColors().textPrimary,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                child: title!,
-              )
-            : null,
-        actions: actions,
-      ),
+        padding: padding ?? EdgeInsets.symmetric(horizontal: TSizes().defaultSpace),
+        child: AppBar(
+          backgroundColor: backgroundColor ?? (isDarkMode ? TColors().darkBackground : TColors().white),
+          automaticallyImplyLeading: false,
+          // Prevents default back arrow rendering.
+          leading: showBackArrow
+              ? TIcon(icon: Iconsax.arrow_left, color: leadingIconColor, onPressed: () => Navigator.pop(context))
+              : leading ??
+        (leadingIcon != null
+        ? IconButton(
+        onPressed: leadingOnPressed,
+          icon: Icon(
+            leadingIcon,
+            color: leadingIconColor ?? (isDarkMode ? TColors().iconPrimaryLight : TColors().iconPrimaryDark),
+          ),
+        )
+            : null),
+    title: title != null
+    ? DefaultTextStyle.merge(
+    style: titleStyle ??
+    TextStyle(
+    color: isDarkMode ? TColors().white : TColors().textPrimary,
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+    ),
+    child: title!,
+    )
+        : null,
+    actions: actions,
+    ),
     );
   }
 

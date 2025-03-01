@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../common/widgets/texts/text_with_icon.dart';
-import '../constants/colors.dart';
+import 'package:t_utils/t_utils.dart';
 
 /// A class to manage and show dialogs with customizable actions.
 class TDialogs {
@@ -37,11 +35,17 @@ class TDialogs {
           child: AlertDialog(
             backgroundColor: TColors().lightBackground,
             title: TTextWithIcon(text: title, icon: Iconsax.box),
-            content: content ??
-                Text(
-                  'Removing this data will delete all related data. Are you sure?',
-                  style: Theme.of(context).textTheme.bodyMedium, // Default text style
-                ),
+            content: Container(
+              constraints: BoxConstraints(
+                maxWidth: TDeviceUtils.isDesktopScreen(context) ? TDeviceUtils.getScreenWidth(context) * 0.7 :TDeviceUtils.getScreenWidth(context) * 0.9 ,
+                maxHeight: TDeviceUtils.isDesktopScreen(context) ? TDeviceUtils.getScreenHeight(context) * 0.6 : TDeviceUtils.getScreenHeight(context) * 0.8,
+              ),
+              child: content ??
+                  Text(
+                    'Removing this data will delete all related data. Are you sure?',
+                    style: Theme.of(context).textTheme.bodyMedium, // Default text style
+                  ),
+            ),
             actions: hideActions
                 ? null
                 : [

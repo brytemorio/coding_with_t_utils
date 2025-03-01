@@ -154,19 +154,22 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
                   imageType: imageType ?? (profileImage != null ? ImageType.network : ImageType.asset),
                   image: profileImage ?? 'packages/t_utils/assets/user.png',
                 ),
-                SizedBox(width: TSizes().sm),
+
+                if (!TDeviceUtils.isMobileScreen(context)) SizedBox(width: TSizes().sm),
+
                 // Display profile name and email if available
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  spacing: TSizes().spaceBtwItems / 2,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (loading) const TShimmer(width: 50, height: 11),
-                    if (loading) const TShimmer(width: 140, height: 11),
-                    if (!loading) Text(profileName ?? '', style: Theme.of(context).textTheme.titleLarge),
-                    if (!loading) Text(profileEmail ?? '', style: Theme.of(context).textTheme.labelMedium),
-                  ],
-                ),
+                if (!TDeviceUtils.isMobileScreen(context))
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    spacing: TSizes().spaceBtwItems / 2,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (loading) const TShimmer(width: 50, height: 11),
+                      if (loading) const TShimmer(width: 140, height: 11),
+                      if (!loading) Text(profileName ?? '', style: Theme.of(context).textTheme.titleLarge),
+                      if (!loading) Text(profileEmail ?? '', style: Theme.of(context).textTheme.labelMedium),
+                    ],
+                  ),
               ],
             ),
           ),
