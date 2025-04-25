@@ -18,7 +18,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  t_utils: ^2.1.5
+  t_utils: ^2.1.6
 ```
 
 ### Step 2: Import the Package
@@ -38,7 +38,7 @@ dependencies:
   t_utils:
     git:
       url: https://github.com/CodingwithTea/t_utils.git
-      ref: v2.1.5
+      ref: v2.1.6
 ```
 
 Local Usage
@@ -55,13 +55,13 @@ dependencies:
 - Create new tag using
 
 ```shell
-git tag v2.1.5
+git tag v2.1.6
 ```
 
 - Then push the code using
 
 ```shell
-git push origin v2.1.5
+git push origin v2.1.6
 ```
 
 
@@ -69,11 +69,11 @@ git push origin v2.1.5
 Delete the existing tag locally and remotely
 
 ```shell 
-git tag -d v2.1.5
+git tag -d v2.1.6
 ```
 - Delete the tag from GitHub
 ```shell
-git push origin --delete v2.1.5
+git push origin --delete v2.1.6
 ``` 
 
 

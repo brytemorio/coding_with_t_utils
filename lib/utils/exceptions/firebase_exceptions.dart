@@ -1,14 +1,51 @@
+import 'package:clipboard/clipboard.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+
+import '../../common/widgets/icons/t_icon.dart';
+import '../constants/colors.dart';
+import '../constants/sizes.dart';
+import '../popups/dialogs.dart';
+import '../popups/loaders.dart';
+
 /// Custom exception class to handle various Firebase-related errors.
 class TFirebaseException implements Exception {
   /// The error code associated with the exception.
   final String code;
+  final String? errorMessage;
 
   /// Constructor that takes an error code.
-  TFirebaseException(this.code);
+  TFirebaseException(this.code, {this.errorMessage});
 
   /// Get the corresponding error message based on the error code.
   String get message {
     switch (code) {
+      case 'failed-precondition':
+        final urlPattern = r'((https?|ftp):\/\/[^\s/$.?#].[^\s]*)';
+        final urlRegExp = RegExp(urlPattern);
+        final matches = urlRegExp.allMatches(errorMessage ?? '');
+        final urls = matches.map((match) => match.group(0)).toList();
+
+        TDialogs.defaultDialog(
+          context: Get.context!,
+          title: 'Create new Index',
+          confirmText: 'Copy URL',
+          onConfirm: () => FlutterClipboard.copy(urls.first ?? '').then((value) => TLoaders.customToast(message: 'URL copied')),
+          content: Row(
+            spacing: TSizes().spaceBtwItems,
+            children: [
+              Expanded(child: SelectableText(errorMessage ?? 'The query requires an index. Create that index and try again.')),
+              TIcon(
+                tooltip: 'Copy URL',
+                icon: Iconsax.copy,
+                color: TColors().primary,
+                onPressed: () => FlutterClipboard.copy(urls.first ?? '').then((value) => TLoaders.customToast(message: 'URL copied')),
+              ),
+            ],
+          ),
+        );
+        return 'The query requires an index. Create that index and try again.';
       case 'unauthorized':
         return 'You are using a test account; modifications are not allowed.';
       case 'unknown':

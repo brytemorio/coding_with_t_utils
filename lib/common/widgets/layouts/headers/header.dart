@@ -30,6 +30,7 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
     this.onOrderPressed,
     this.onNotificationPressed,
     this.onSettingsPressed,
+    this.leadingIconColor,
   });
 
   /// GlobalKey to access the Scaffold state for mobile drawer management.
@@ -40,6 +41,7 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
 
   /// Custom leading icon and its onPressed callback.
   final IconData? leadingIcon;
+  final Color? leadingIconColor;
   final VoidCallback? leadingOnPressed;
 
   /// Custom actions for the header, such as icons/buttons.
@@ -91,9 +93,10 @@ class TAdminHeader extends StatelessWidget implements PreferredSizeWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: TSizes().md, vertical: TSizes().sm),
       child: TAppBar(
-        leadingIcon: showMenu && !TDeviceUtils.isDesktopScreen(context) ? Iconsax.menu : leadingIcon,
+        leadingIconColor: leadingIconColor,
+        leadingIcon: showMenu && !TDeviceUtils.isDesktopScreen(context) ? leadingIcon ?? Iconsax.menu : leadingIcon,
         leadingOnPressed:
-            showMenu && !TDeviceUtils.isDesktopScreen(context) ? () => scaffoldKey.currentState?.openDrawer() : leadingOnPressed,
+            showMenu && !TDeviceUtils.isDesktopScreen(context) ? leadingOnPressed ?? () => scaffoldKey.currentState?.openDrawer() : leadingOnPressed,
         title: Row(
           children: [
             // Conditionally show search field on desktop

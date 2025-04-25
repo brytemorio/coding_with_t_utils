@@ -1,7 +1,12 @@
 # Changelog
 
+## 2.1.6
+- New Custom `Error Message` added in the `Exceptions`
+- Fixed `THeader` Icon Color Issue and added `THeader Example`
+
+
 ## 2.1.5
-- `Header` abd `Appbar` Mobile version fixed
+- `Header` and `Appbar` Mobile version fixed
 - `Dialogs` length issue resolved
 
 

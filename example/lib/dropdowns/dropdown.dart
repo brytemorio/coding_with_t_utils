@@ -13,6 +13,7 @@ class TDropdownExample extends StatelessWidget {
         TDropdown<String>(
           labelText: "Select Country: Menu",
           popupStyle: DropdownPopupStyle.menu,
+          showSearchBox: true,
           items: (query, _) =>
               Future.value(['USA', 'Canada', 'India', 'Pakistan']),
           onChanged: (value) {
