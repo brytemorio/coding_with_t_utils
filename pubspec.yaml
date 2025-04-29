@@ -1,7 +1,9 @@
 name: t_utils
-description: "A new Flutter package project."
+description: "A package that is full of widgets, helper methods and utilities"
 
-version:
+version: 0.0.1
+
+
   # Follow the semantic versioning guidelines:
   #
   #  Major changes that break backward compatibility: 1.0.0 -> 2.0.0

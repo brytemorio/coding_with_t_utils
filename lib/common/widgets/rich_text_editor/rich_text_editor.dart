@@ -87,10 +87,10 @@ class TTextEditor extends StatefulWidget {
   });
 
   @override
-  _TTextEditorState createState() => _TTextEditorState();
+  TTextEditorState createState() => TTextEditorState();
 }
 
-class _TTextEditorState extends State<TTextEditor> {
+class TTextEditorState extends State<TTextEditor> {
   @override
   void initState() {
     super.initState();
