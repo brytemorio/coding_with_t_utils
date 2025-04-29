@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.7
+- Removed `PaymentTypes` Enum
+
 ## 2.1.6
 - New Custom `Error Message` added in the `Exceptions`
 - Fixed `THeader` Icon Color Issue and added `THeader Example`

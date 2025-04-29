@@ -12,14 +12,11 @@ enum ImageType { asset, network, memory, file }
 
 enum PaymentStatus { unpaid, paid, refunded, pendingRefund, failed }
 
-
 enum VerificationStatus { unknown, pending, submitted, underReview, approved, rejected }
 
 enum OrderStatus { pending, processing, shipped, delivered, canceled, returned, refunded }
 
 enum ActivityType { orderCreated, processing, paymentReceived, shipped, delivered, returned, canceled }
-
-enum PaymentMethods { paypal, googlePay, applePay, visa, masterCard, creditCard, paystack, razorPay, paytm }
 
 enum UnitType {
   unitLess,
