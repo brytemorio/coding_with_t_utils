@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.2
+- Added new Exception `TFirebaseException` with `errorMessage` parameter
+- Added new case in `TFirebaseException` for `permission-denied`
+
 ## 0.0.1
 
 - Removed `PaymentTypes` Enum

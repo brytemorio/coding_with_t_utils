@@ -48,6 +48,8 @@ class TFirebaseException implements Exception {
         return 'The query requires an index. Create that index and try again.';
       case 'unauthorized':
         return 'You are using a test account; modifications are not allowed.';
+      case 'permission-denied':
+        return 'You have read-only access. Contact support for full access.';
       case 'unknown':
         return 'An unknown Firebase error occurred. Please try again.';
       case 'invalid-custom-token':
