@@ -1,7 +1,7 @@
 name: t_utils
 description: "A package that is full of widgets, helper methods and utilities"
 
-version: 0.0.2
+version: 0.0.3
 
 
   # Follow the semantic versioning guidelines:

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.3
+- `Quill Text Editor` Package Updated and Fixed Breaking Changes
+
 ## 0.0.2
 - Added new Exception `TFirebaseException` with `errorMessage` parameter
 - Added new case in `TFirebaseException` for `permission-denied`
