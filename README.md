@@ -18,7 +18,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  t_utils: ^0.0.2
+  t_utils: ^0.0.3
 ```
 
 ### Step 2: Import the Package
@@ -38,7 +38,7 @@ dependencies:
   t_utils:
     git:
       url: https://github.com/CodingwithTea/t_utils.git
-      ref: v0.0.2
+      ref: v0.0.3
 ```
 
 Local Usage

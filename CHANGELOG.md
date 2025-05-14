@@ -2,6 +2,7 @@
 
 ## 0.0.3
 - `Quill Text Editor` Package Updated and Fixed Breaking Changes
+- Packages Updated
 
 ## 0.0.2
 - Added new Exception `TFirebaseException` with `errorMessage` parameter
