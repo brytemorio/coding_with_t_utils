@@ -14,6 +14,7 @@ import 'appbars/appbar.dart';
 import 'appbars/sliver_appbar.dart';
 import 'breadcrumbs/breadcrumbs.dart';
 import 'containers/rounded_container.dart';
+import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'dropdowns/dropdown.dart';
 
 void main() {
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Utils Example',
       themeMode: ThemeMode.dark,
+      localizationsDelegates: const [
+        quill.FlutterQuillLocalizations.delegate,
+      ],
       theme: ThemeData(scaffoldBackgroundColor: TColors().lightBackground),
       home: const MyHomePage(),
     );

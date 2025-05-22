@@ -1,6 +1,10 @@
 # Changelog
 
 ## 0.0.3
+- `Paginated Data Table` Updated
+- Packages Updated
+
+## 0.0.3
 - `Quill Text Editor` Package Updated and Fixed Breaking Changes
 - Packages Updated
 
