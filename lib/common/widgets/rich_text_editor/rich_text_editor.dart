@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:t_utils/t_utils.dart';
 
 import 'editor_controller.dart';
@@ -145,27 +144,18 @@ class TTextEditorState extends State<TTextEditor> {
             border: Border.all(color: widget.borderColor),
             borderRadius: BorderRadius.circular(widget.borderRadius),
           ),
-          child: Localizations(
-            locale: const Locale('en'),
-            delegates: const [
-              quill.FlutterQuillLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            child: quill.QuillEditor(
-              controller: widget.controller.quillController,
-              scrollController: ScrollController(),
-              config: quill.QuillEditorConfig(
-                expands: false,
-                scrollable: true,
-                autoFocus: widget.autoFocus,
-                placeholder: widget.placeholder,
-                checkBoxReadOnly: widget.isReadOnly,
-                enableInteractiveSelection: widget.enableSelectionToolbar,
-              ),
-              focusNode: FocusNode(),
+          child: quill.QuillEditor(
+            controller: widget.controller.quillController,
+            scrollController: ScrollController(),
+            config: quill.QuillEditorConfig(
+              expands: false,
+              scrollable: true,
+              autoFocus: widget.autoFocus,
+              placeholder: widget.placeholder,
+              checkBoxReadOnly: widget.isReadOnly,
+              enableInteractiveSelection: widget.enableSelectionToolbar,
             ),
+            focusNode: FocusNode(),
           ),
         ),
       ],
