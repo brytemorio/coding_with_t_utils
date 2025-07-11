@@ -20,8 +20,6 @@ enum OrderStatus { pending, processing, shipped, delivered, canceled, returned, 
 
 enum ActivityType { orderCreated, processing, paymentReceived, shipped, delivered, returned, canceled }
 
-enum PaymentMethods { paypal, googlePay, applePay, visa, masterCard, creditCard, paystack, razorPay, paytm }
-
 enum UnitType {
   unitLess,
   length, // e.g., meters, kilometers, miles

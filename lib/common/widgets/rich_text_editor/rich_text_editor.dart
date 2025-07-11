@@ -87,10 +87,10 @@ class TTextEditor extends StatefulWidget {
   });
 
   @override
-  _TTextEditorState createState() => _TTextEditorState();
+  TTextEditorState createState() => TTextEditorState();
 }
 
-class _TTextEditorState extends State<TTextEditor> {
+class TTextEditorState extends State<TTextEditor> {
   @override
   void initState() {
     super.initState();
@@ -111,15 +111,14 @@ class _TTextEditorState extends State<TTextEditor> {
         // Label
         Text(
           widget.label,
-          style: widget.labelStyle ??
-              const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: widget.labelStyle ?? const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8),
 
         // Toolbar
         if (!widget.isReadOnly)
-          quill.QuillToolbar.simple(
-            configurations: quill.QuillSimpleToolbarConfigurations(
+          quill.QuillSimpleToolbar(
+            config: quill.QuillSimpleToolbarConfig(
               color: widget.toolbarColor ?? Colors.transparent,
               multiRowsDisplay: widget.toolbarMultiRow,
               showBoldButton: widget.showBold,
@@ -148,7 +147,7 @@ class _TTextEditorState extends State<TTextEditor> {
           child: quill.QuillEditor(
             controller: widget.controller.quillController,
             scrollController: ScrollController(),
-            configurations: quill.QuillEditorConfigurations(
+            config: quill.QuillEditorConfig(
               expands: false,
               scrollable: true,
               autoFocus: widget.autoFocus,

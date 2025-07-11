@@ -4,7 +4,6 @@ export 'device/web_material_scroll.dart';
 export 'exceptions/exports.dart';
 export 'formatters/formatter.dart';
 export 'helpers/exports.dart';
-export 'http/http_client.dart';
 export 'local_storage/storage_utility.dart';
 export 'popups/exports.dart';
 export 'validators/validation.dart';

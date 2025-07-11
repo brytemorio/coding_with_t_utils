@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_utils/common/widgets/exports.dart';
 import 'package:t_utils/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -82,20 +83,14 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
         automaticallyImplyLeading: false,
         // Prevents default back arrow rendering.
         leading: showBackArrow
-            ? IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Iconsax.arrow_left,
-                  color: isDarkMode ? TColors().white : TColors().darkBackground,
-                ),
-              )
+            ? TIcon(icon: Iconsax.arrow_left, color: leadingIconColor, onPressed: () => Navigator.pop(context))
             : leading ??
                 (leadingIcon != null
                     ? IconButton(
                         onPressed: leadingOnPressed,
                         icon: Icon(
                           leadingIcon,
-                          color: leadingIconColor ?? (isDarkMode ? TColors().iconPrimaryLight : TColors().iconPrimaryDark),
+                          color: leadingIconColor ?? (isDarkMode ? TColors().iconPrimaryDark : TColors().iconPrimaryLight),
                         ),
                       )
                     : null),

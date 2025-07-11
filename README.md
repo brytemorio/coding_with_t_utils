@@ -4,11 +4,11 @@ A reusable Flutter Utils package for tons of widgets and helper functions.
 
 ## Features
 
-- **Styled notifications** for different types: Success, Error, Warning, and Info.
-- **Automatically dismisses** after a configurable duration.
-- **Supports stacking multiple notifications.**
-- **Highly customizable** UI and message content.
-- **Easy to integrate** into any Flutter project.
+- **Widgets Box** You can now use pre-built TContainer, TImage, Dropdowns, Appbar, Header, Breadcrumbs, DataTables, Layouts, Rich Text Editor and much more.
+- **Constants** Everything a project needs, You can get pre-build Colors, Sizes and can also customize them easily.
+- **Exceptions** Now manage exceptions like a breeze.
+- **Helper Functions** Tons of only use-able functions.
+- **Validators, Popups, Formatters and much more**
 
 ## Usage
 
@@ -18,7 +18,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  t_utils: ^2.1.4
+  t_utils: ^0.0.4
 ```
 
 ### Step 2: Import the Package
@@ -38,7 +38,7 @@ dependencies:
   t_utils:
     git:
       url: https://github.com/CodingwithTea/t_utils.git
-      ref: v2.1.4
+      ref: v0.0.4
 ```
 
 Local Usage
@@ -49,32 +49,96 @@ dependencies:
     path: /path/to/t_utils
 ```
 
-### Step # 3: Push Changes to Github
 
-- Push new changes on the Git using tagging.
-- Create new tag using
+### Step 3: Use Widgets
+Use Widgets like a breeze:
 
-```shell
-git tag v2.1.4
+```dart
+TContainer(
+  child: Center(child: Text('Default')),
+),
 ```
 
-- Then push the code using
-
-```shell
-git push origin v2.1.4
+```dart
+TContainer(
+  width: 120,
+  height: 50,
+  onTap: () {
+    print('Tapped!');
+  },
+  showRipple: true,
+  child: Center(child: Text('Clickable')),
+),
 ```
 
-
-### Steps to Update an Existing Tag
-Delete the existing tag locally and remotely
-
-```shell 
-git tag -d v2.1.4
+```dart
+TContainer(
+  width: 350,
+  height: 100,
+  alignment: Alignment.bottomCenter,
+  shadow: BoxShadow(
+    color: Colors.red.withValues(alpha: 0.5),
+    spreadRadius: 5,
+    blurRadius: 10,
+    offset: Offset(0, 5),
+  ),
+  child: Text('Custom Shadow with custom alignment'),
+),
 ```
-- Delete the tag from GitHub
-```shell
-git push origin --delete v2.1.4
-``` 
+
+CHOICE CHIPS
+
+```dart
+TChoiceChip(
+  text: "0xFFAB3559", // Color value
+  selected: false,
+  isColorAttribute: true,
+  selectedTextColor: Colors.white,
+  onSelected: (isSelected) {
+    // Handle color selection
+  },
+),
+TChoiceChip(
+  text: "Custom Chip with Icon",
+  selected: true,
+  selectedTextColor: Colors.blue,
+  unselectedTextColor: Colors.grey,
+  backgroundColor: Colors.amberAccent,
+  customCheckmarkIcon:
+    Icon(Icons.health_and_safety_rounded, color: Colors.blue),
+  borderShape:
+    RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  onSelected: (isSelected) {
+    // Handle selection
+  },
+),
+```
+
+DROPDOWNS
+```dart
+TDropdown<String>(
+  labelText: "Select Country: Menu",
+  popupStyle: DropdownPopupStyle.menu,
+  showSearchBox: true,
+  items: (query, _) =>
+    Future.value(['USA', 'Canada', 'India', 'Pakistan']),
+    onChanged: (value) {
+      print("Selected: $value");
+    },
+),
+
+TDropdown<String>(
+  labelText: "Search Country: BottomSheet",
+  showSearchBox: true,
+  popupStyle: DropdownPopupStyle.bottomSheet,
+  items: (query, _) => Future.value(
+    ['USA', 'Canada', 'India', 'Germany', 'Australia', 'Pakistan']),
+  onChanged: (value) {
+    print("Selected: $value");
+  },
+),
+```
+
 
 
 

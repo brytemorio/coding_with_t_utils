@@ -68,12 +68,9 @@ class TTableHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isMobile = TDeviceUtils.isMobileScreen(context);
 
         return Padding(
-          padding: EdgeInsets.symmetric(
-              vertical: TSizes().spaceBtwItems,
-              horizontal: TSizes().spaceBtwItems / 2),
+          padding: EdgeInsets.symmetric(vertical: TSizes().spaceBtwItems, horizontal: TSizes().spaceBtwItems / 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -85,10 +82,7 @@ class TTableHeader extends StatelessWidget {
                   if (showCreateButton)
                     SizedBox(
                       width: width ?? 200,
-                      child: ElevatedButton(
-                        onPressed: onCreatePressed,
-                        child: Text(buttonText),
-                      ),
+                      child: ElevatedButton(onPressed: onCreatePressed, child: Text(buttonText)),
                     ),
 
                   // Filters and Actions
@@ -100,22 +94,22 @@ class TTableHeader extends StatelessWidget {
                       // Sort Button
                       if (showSortButton)
                         TextButton.icon(
-                          onPressed: onSort,
+                          onPressed: onSort ?? () {},
                           icon: const Icon(Icons.sort),
                           label: Text(sortLabel ?? 'Sort'),
                         ),
 
                       if (showDownloadCSVButton)
-                      IconButton(
-                        icon: const Icon(Icons.download),
-                        onPressed: onDownloadCSV,
-                      ),
+                        IconButton(
+                          icon: const Icon(Icons.download),
+                          onPressed: onDownloadCSV ?? () {},
+                        ),
 
                       if (showPrintTableButton)
-                      IconButton(
-                        icon: const Icon(Icons.print),
-                        onPressed: onPrintTable,
-                      ),
+                        IconButton(
+                          icon: const Icon(Icons.print),
+                          onPressed: onPrintTable ?? () {},
+                        ),
 
                       // Additional Actions
                       ...actions,
@@ -124,7 +118,7 @@ class TTableHeader extends StatelessWidget {
                 ],
               ),
 
-              if (!isMobile) SizedBox(height: TSizes().spaceBtwItems),
+              SizedBox(height: TSizes().spaceBtwItems),
 
               // Search Bar
               TextFormField(
@@ -145,9 +139,7 @@ class TTableHeader extends StatelessWidget {
                       : null,
                   fillColor: Colors.white,
                   filled: true,
-                  border: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.circular(TSizes().borderRadiusLg)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(TSizes().borderRadiusLg)),
                 ),
               ),
             ],
