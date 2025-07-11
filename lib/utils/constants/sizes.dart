@@ -36,8 +36,8 @@ class TSizes {
   double imageThumbSize = 80.0;
 
   // Default spacing between sections
-  double defaultSpace = 16.0;
-  double spaceBtwItems = 12.0;
+  double defaultSpace = 24.0;
+  double spaceBtwItems = 16.0;
   double spaceBtwSections = 32.0;
 
   // Border radius

@@ -6,12 +6,13 @@
 /// Dropdown popup display styles
 enum DropdownPopupStyle { modal, bottomSheet, menu, dialog }
 
+enum Role { admin, manager, operator, fleetOwner, fleetManager, fleetOperator, driver, user, unknown }
+
 enum TextSizes { small, medium, large }
 
 enum ImageType { asset, network, memory, file }
 
 enum PaymentStatus { unpaid, paid, refunded, pendingRefund, failed }
-
 
 enum VerificationStatus { unknown, pending, submitted, underReview, approved, rejected }
 
